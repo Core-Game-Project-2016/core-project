@@ -1,0 +1,10 @@
+<template name="serverlist" content="content">
+<head>
+	<link type="text/rcss" href="main_menu.rcss"/>
+</head>
+<body class="serverlist">
+	<ul class="button_list">
+		<li class="button" onclick="scr.Back()">Back</li>
+	</ul>
+</body>
+</template>

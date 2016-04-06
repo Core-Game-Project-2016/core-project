@@ -148,7 +148,7 @@ CoreProjectApplication::SetupGameFeatures()
 	Util::String ff2 = Util::String::FromBase64(foo2);
 	Util::String ff3 = Util::String::FromBase64(foo3);
 
-	this->mainLayout = uiFeature->GetLayout("demo");
+	this->mainLayout = uiFeature->GetLayout("main_menu");
 	this->mainLayout->Show();
 
 	

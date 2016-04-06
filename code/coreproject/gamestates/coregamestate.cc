@@ -53,9 +53,9 @@ CoreGameState::OnStateEnter( const Util::String& prevState )
 {
 	GameStateHandler::OnStateEnter(prevState);	
 
-	const Ptr<UI::UiLayout>& layout = UI::UiFeatureUnit::Instance()->GetLayout("demo");
-	Ptr<UI::UiElement> element = layout->GetElement("updatetext");
-	element->SetText("Entered state");
+	const Ptr<UI::UiLayout>& layout = UI::UiFeatureUnit::Instance()->GetLayout("main_menu");
+	//Ptr<UI::UiElement> element = layout->GetElement("updatetext");
+	//element->SetText("Entered state");
 }
 
 //------------------------------------------------------------------------------
@@ -112,7 +112,7 @@ CoreGameState::HandleInput()
 	// reload layout if key gets pressed
 	if (kbd->KeyDown(Input::Key::F1))
 	{
-        const Ptr<UI::UiLayout>& layout = UI::UiFeatureUnit::Instance()->GetLayout("demo");
+        const Ptr<UI::UiLayout>& layout = UI::UiFeatureUnit::Instance()->GetLayout("main_menu");
         layout->Reload();
 	}
 	if(kbd->KeyDown(Input::Key::X))

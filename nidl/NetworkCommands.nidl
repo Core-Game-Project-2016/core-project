@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Nebula3>
+
+	<Command name="createlobby" fourcc="crGa" desc="creates a new game session">
+      <Code>
+        <![CDATA[
+			MultiplayerFeature::NetworkGame::Instance()->CreateRoom();
+        ]]>
+      </Code>
+    </Command>
+	
+	<Command name="refreshlobby" fourcc="rfsH" desc="refreshlobby">
+      <Code>
+        <![CDATA[
+			MultiplayerFeature::NetworkGame::Instance()->UpdateRoomList();
+        ]]>
+      </Code>
+    </Command>
+	
+	<Command name="refreshserverlist" fourcc="RfSL" desc="update server list">
+      <Code>
+        <![CDATA[
+			MultiplayerFeature::NetworkServer::Instance()->SearchForGames();
+        ]]>
+      </Code>
+    </Command>
+	
+	<Command name="startgame" fourcc="StGm" desc="start game">
+      <Code>
+        <![CDATA[
+			CoreProjectApplication::Instance()->FindStateHandlerByName("CoreState").cast<BaseGameFeature::GameStateHandler>()->SetLevelName("demo_full");
+			CoreProjectApplication::Instance()->FindStateHandlerByName("CoreState").cast<BaseGameFeature::GameStateHandler>()->SetSetupMode(BaseGameFeature::GameStateHandler::LoadNetworkedLevel);
+			CoreProjectApplication::Instance()->RequestState("CoreState");
+        ]]>
+      </Code>
+    </Command>
+	
+	<Command name="joinlobby" fourcc="JoLo" desc="join lobby">
+      <Code>
+        <![CDATA[
+			MultiplayerFeature::NetworkGame::Instance()->JoinRoom("127.0.0.1|61111",true);
+        ]]>
+      </Code>
+    </Command>
+	
+	<Command name="exit" fourcc="exIT" desc="exit game">
+      <Code>
+        <![CDATA[
+			CoreProjectApplication::Instance()->RequestState("Exit");
+        ]]>
+      </Code>
+    </Command>
+
+</Nebula3>

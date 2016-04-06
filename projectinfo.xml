@@ -67,5 +67,9 @@
             <Attr name="SyncTexBatchArgs" value=""/>
         </Platform>
 
+		<NIDL>
+			<File name="nidl/NetworkCommands.nidl"/>
+		</NIDL>
+		
     </Project>
 </Nebula3>
