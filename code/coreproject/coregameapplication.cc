@@ -120,6 +120,9 @@ CoreProjectApplication::SetupGameFeatures()
 	// setup posteffect
 	this->postEffectFeature = PostEffect::PostEffectFeatureUnit::Create();
 
+	// setup multiplayerfeature
+	this->multiplayerFeature = MultiplayerFeature::MultiplayerFeatureUnit::Create();
+
 	this->networkGame = MultiplayerFeature::NetworkGame::Create();
 	this->networkGame->SetGameID(App::Application::Instance()->GetAppID());
 	this->player = MultiplayerFeature::NetworkPlayer::Create();
