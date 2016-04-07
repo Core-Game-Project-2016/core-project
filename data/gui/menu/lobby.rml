@@ -3,12 +3,9 @@
 	<link type="text/rcss" href="main_menu.rcss"/>
 </head>
 <body class="lobby">
-
-	<ul class="connected_players">
-		<li class="player">Test Player</li> <input type="checkbox" class="ready_checkbox"/>
-	</ul>
 	
 	<ul class="button_list">
+		<li class="button" onclick="scr.StartGame()">Start Game</li>
 		<li class="button" onclick="scr.Back()">Back</li>
 	</ul>
 </body>

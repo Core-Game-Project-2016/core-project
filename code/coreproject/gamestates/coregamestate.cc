@@ -4,19 +4,9 @@
 //------------------------------------------------------------------------------
 #include "stdneb.h"
 #include "Coregamestate.h"
-#include "math/vector.h"
 #include "math/matrix44.h"
 #include "graphicsfeatureunit.h"
-#include "managers/factorymanager.h"
-#include "managers/entitymanager.h"
-#include "managers/enventitymanager.h"
-#include "scriptfeature/managers/scripttemplatemanager.h"
-#include "attr/attribute.h"
-#include "graphicsfeature/graphicsattr/graphicsattributes.h"
-#include "managers/focusmanager.h"
 #include "input/keyboard.h"
-#include "scriptingfeature/properties/scriptingproperty.h"
-#include "scriptingfeature/scriptingprotocol.h"
 #include "effects/effectsfeatureunit.h"
 #include "coreproject/coregameapplication.h"
 
@@ -53,9 +43,9 @@ CoreGameState::OnStateEnter( const Util::String& prevState )
 {
 	GameStateHandler::OnStateEnter(prevState);	
 
-	const Ptr<UI::UiLayout>& layout = UI::UiFeatureUnit::Instance()->GetLayout("main_menu");
+	//const Ptr<UI::UiLayout>& layout = UI::UiFeatureUnit::Instance()->GetLayout("main_menu");
 	//Ptr<UI::UiElement> element = layout->GetElement("updatetext");
-	//element->SetText("Entered state");
+	//return element->GetText();
 }
 
 //------------------------------------------------------------------------------
@@ -108,7 +98,6 @@ CoreGameState::HandleInput()
 {
 	const Ptr<Input::Keyboard>& kbd = Input::InputServer::Instance()->GetDefaultKeyboard();
 
-
 	// reload layout if key gets pressed
 	if (kbd->KeyDown(Input::Key::F1))
 	{
@@ -122,6 +111,12 @@ CoreGameState::HandleInput()
 	if (kbd->KeyDown(Input::Key::F2))
 	{
 		EffectsFeature::EffectsFeatureUnit::Instance()->EmitGraphicsEffect(Math::matrix44::translation(n_rand(-5, 5), 10, n_rand(-5, 5)), "mdl:particles/newparticle.n3", 10.0f);
+	}
+	if (kbd->KeyDown(Input::Key::G))
+	{
+		CoreProjectApplication::Instance()->FindStateHandlerByName("CoreState").cast<BaseGameFeature::GameStateHandler>()->SetLevelName("demo_full");
+		CoreProjectApplication::Instance()->FindStateHandlerByName("CoreState").cast<BaseGameFeature::GameStateHandler>()->SetSetupMode(BaseGameFeature::GameStateHandler::LoadNetworkedLevel);
+		CoreProjectApplication::Instance()->RequestState("CoreState");
 	}
 }
 } // namespace Tools

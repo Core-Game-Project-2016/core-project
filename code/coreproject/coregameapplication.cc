@@ -5,10 +5,6 @@
 #include "stdneb.h"
 #include "graphics/graphicsprotocol.h"
 #include "messaging/message.h"
-#include "input/keyboard.h"
-#include "input/gamepad.h"
-#include "managers/factorymanager.h"
-#include "managers/entitymanager.h"
 #include "gamestates/coregamestate.h"
 #include "physicsfeature/physicsprotocol.h"
 #include "graphicsfeature/graphicsfeatureprotocol.h"
@@ -75,10 +71,10 @@ void
 CoreProjectApplication::SetupStateHandlers()
 {
 	Ptr<CoreGameState> gameState = CoreGameState::Create();
-	gameState->SetSetupMode(CoreGameState::NewGame);
+	gameState->SetSetupMode(CoreGameState::LoadLevel);
 	gameState->SetName("CoreState");
 	// select the level to be loaded explicitly instead of the default one
-	gameState->SetLevelName("demo_full");
+	gameState->SetLevelName("menu_level");
 
 	this->AddStateHandler(gameState.get());
 
@@ -124,6 +120,13 @@ CoreProjectApplication::SetupGameFeatures()
 	// setup posteffect
 	this->postEffectFeature = PostEffect::PostEffectFeatureUnit::Create();
 
+	this->networkGame = MultiplayerFeature::NetworkGame::Create();
+	this->networkGame->SetGameID(App::Application::Instance()->GetAppID());
+	this->player = MultiplayerFeature::NetworkPlayer::Create();
+	this->multiplayerFeature->SetPlayer(this->player);
+	// must come before basegamefeature!
+	this->gameServer->AttachGameFeature(this->multiplayerFeature.cast<Game::FeatureUnit>());
+
 	this->gameServer->AttachGameFeature(this->graphicsFeature.cast<Game::FeatureUnit>());
 	this->gameServer->AttachGameFeature(this->baseGameFeature.upcast<Game::FeatureUnit>());	
 	this->gameServer->AttachGameFeature(this->fxFeature.upcast<Game::FeatureUnit>());
@@ -132,21 +135,13 @@ CoreProjectApplication::SetupGameFeatures()
 	this->gameServer->AttachGameFeature(this->uiFeature.cast<Game::FeatureUnit>());
 	this->gameServer->AttachGameFeature(this->postEffectFeature.cast<Game::FeatureUnit>());
 
+	this->multiplayerFeature->Setup(MultiplayerFeature::MultiplayerFeatureUnit::LAN);
 
 	Commands::ScriptingCommands::Register();
 	Commands::PhysicsProtocol::Register();
 	Commands::GraphicsFeatureProtocol::Register();
 	Commands::BaseGameProtocol::Register();
 	Commands::UICommands::Register();
-
-	Util::String foo = "1234";
-	Util::String foo2 = foo.AsBase64();
-	foo2.Strip("\r");
-	Util::String foo3 = foo.AsBase64();
-	foo3.Strip("\r");
-	Util::String foo4 = foo.AsBase64();
-	Util::String ff2 = Util::String::FromBase64(foo2);
-	Util::String ff3 = Util::String::FromBase64(foo3);
 
 	this->mainLayout = uiFeature->GetLayout("main_menu");
 	this->mainLayout->Show();
@@ -175,10 +170,15 @@ CoreProjectApplication::SetupGameFeatures()
 void 
 CoreProjectApplication::CleanupGameFeatures()
 {
-	this->mainLayout = 0;	
+	this->mainLayout = 0;
+	this->player = 0;
 	this->gameServer->RemoveGameFeature(this->postEffectFeature.upcast<Game::FeatureUnit>());
 	this->postEffectFeature = 0;
 	this->gameServer->RemoveGameFeature(this->fxFeature.upcast<Game::FeatureUnit>());
+	this->gameServer->RemoveGameFeature(this->multiplayerFeature.upcast<Game::FeatureUnit>());
+	this->multiplayerFeature = 0;
+	this->networkGame->Close();
+	this->networkGame = 0;
 	this->fxFeature = 0;
 	this->gameServer->RemoveGameFeature(this->baseGameFeature.upcast<Game::FeatureUnit>());
 	this->baseGameFeature = 0;

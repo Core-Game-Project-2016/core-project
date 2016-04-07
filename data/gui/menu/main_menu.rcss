@@ -5,25 +5,18 @@ body
 	font-style: normal;
 	font-size: 15;
 	color: white;
-}
-
-body.window
-{
-	padding-top: 43px;
-	padding-bottom: 20px;
 	
-	min-width: 250px;
-	max-width: 800px;
-	
-	min-height: 135px;
-	max-height: 700px;
+	width: 100%;
+	height: 100%;
 }
 
 .button_list
 {
 	margin: auto;
-	width: 200px;
+	width: 400;
 	height: 100%;
+	
+	float left;
 	
 	background-color: red;
 }
@@ -39,15 +32,30 @@ body.window
 
 .connected_players
 {
-	
+	width: 200px;
+	height: 100%;
+	float: left;
 }
 
 .player
 {
+	min-width: 80px;
+	height: 20px;
+	float left;
 	
+	background-color: green;
 }
 
 .ready_checkbox
 {
+	width: 15px;
+	height: 20px;
+	float: left;
+}
 
+#start_game_button
+{
+	width: 60px;
+	height: 30px;
+	float: right;
 }

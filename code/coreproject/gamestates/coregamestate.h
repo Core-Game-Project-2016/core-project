@@ -9,9 +9,6 @@
 */
 #include "statehandlers/gamestatehandler.h"
 #include "graphics/spotlightentity.h"
-#include "graphics/globallightentity.h"
-#include "graphics/pointlightentity.h"
-#include "game/entity.h"
 
 //------------------------------------------------------------------------------
 namespace Tools
@@ -26,15 +23,15 @@ public:
 	virtual ~CoreGameState();
 
 	/// called when the state represented by this state handler is entered
-	virtual void OnStateEnter(const Util::String& prevState);
+	void OnStateEnter(const Util::String& prevState) override;
 	/// called when the state represented by this state handler is left
-	virtual void OnStateLeave(const Util::String& nextState);
+	void OnStateLeave(const Util::String& nextState) override;
 	/// called each frame as long as state is current, return new state
-	virtual Util::String OnFrame();
+	Util::String OnFrame() override;
 	/// called after Db is opened, and before entities are loaded
-	virtual void OnLoadBefore();
+	void OnLoadBefore() override;
 	/// called after entities are loaded
-	virtual void OnLoadAfter();
+	void OnLoadAfter() override;
 
 	// handle all user input; called @ LevelEditorState::OnFrame()
 	void HandleInput();

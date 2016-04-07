@@ -1,8 +1,4 @@
 #pragma once
-#include "graphics/spotlightentity.h"
-#include "graphics/modelentity.h"
-#include "graphics/globallightentity.h"
-#include "graphics/pointlightentity.h"
 #include "graphicsfeatureunit.h"
 #include "physicsfeatureunit.h"
 #include "basegamefeatureunit.h"
@@ -10,8 +6,9 @@
 #include "scriptingfeature/scriptingfeature.h"
 #include "ui/uifeatureunit.h"
 #include "effects/effectsfeatureunit.h"
-#include "forest/forestrendermodule.h"
 #include "posteffect/posteffectfeatureunit.h"
+#include <multiplayer/networkgame.h>
+#include <multiplayer/multiplayerfeatureunit.h>
 
 //------------------------------------------------------------------------------
 /**
@@ -31,18 +28,18 @@ public:
 	/// destructor
 	virtual ~CoreProjectApplication(void);
 	/// open application
-	virtual bool Open();
+	bool Open() override;
 	/// close application
-	virtual void Close();
+	void Close() override;
 
 private:
 
 	/// setup application state handlers
-	virtual void SetupStateHandlers();
+	void SetupStateHandlers() override;
 	/// setup game features
-	virtual void SetupGameFeatures();
+	void SetupGameFeatures() override;
 	/// cleanup game features
-	virtual void CleanupGameFeatures();
+	void CleanupGameFeatures() override;
 
 	Ptr<UI::UiFeatureUnit> uiFeature;
 	Ptr<UI::UiLayout> mainLayout;
@@ -52,6 +49,9 @@ private:
 	Ptr<BaseGameFeature::BaseGameFeatureUnit> baseGameFeature;
 	Ptr<ScriptingFeature::ScriptingFeatureUnit> scriptingFeature;	
 	Ptr<PostEffect::PostEffectFeatureUnit> postEffectFeature;
+	Ptr<MultiplayerFeature::MultiplayerFeatureUnit> multiplayerFeature;
+	Ptr<MultiplayerFeature::NetworkGame> networkGame;
+	Ptr<MultiplayerFeature::NetworkPlayer> player;
 
 };
 

@@ -5,6 +5,7 @@
 #include "graphicsfeature/graphicsfeatureunit.h"
 #include "basegametiming/gametimesource.h"
 #include "math/polar.h"
+#include "physicsfeature/physicsprotocol.h"
 
 namespace PhysicsFeature
 {
@@ -252,7 +253,7 @@ namespace PhysicsFeature
 		}
 		else if (msg->CheckId(MoveDirection::Id))
 		{
-			this->HandleMoveDirection((MoveDirection*)msg.get());
+			this->HandleMoveDirection(static_cast<MoveDirection*>(msg.get()));
 		}
 		else if (msg->CheckId(MoveStop::Id))
 		{
@@ -260,24 +261,24 @@ namespace PhysicsFeature
 		}
 		else if (msg->CheckId(SetTransform::Id))
 		{
-			this->HandleSetTransform((SetTransform*)msg.get());
+			this->HandleSetTransform(static_cast<SetTransform*>(msg.get()));
 		}
 		else if (msg->CheckId(MoveTurn::Id))
 		{
-			this->HandleMoveTurn((MoveTurn*)msg.get());
+			this->HandleMoveTurn(static_cast<MoveTurn*>(msg.get()));
 		}
 		else if (msg->CheckId(MoveRotate::Id))
 		{
-			this->HandleMoveRotate((MoveRotate*)msg.get());
+			this->HandleMoveRotate(static_cast<MoveRotate*>(msg.get()));
 		}
 		else if (msg->CheckId(GetPhysicsObject::Id))
 		{
-			((PhysicsFeature::GetPhysicsObject*)msg.get())->SetObject(this->GetPhysicsEntity().upcast<Physics::PhysicsObject>());
+			static_cast<PhysicsFeature::GetPhysicsObject*>(msg.get())->SetObject(this->GetPhysicsEntity().upcast<Physics::PhysicsObject>());
 			msg->SetHandled(true);
 		}
 		else if (msg->CheckId(MoveSetVelocity::Id))
 		{
-			this->GetEntity()->SetFloat(Attr::RelVelocity, ((MoveSetVelocity*)msg.get())->GetRelVelocity());
+			this->GetEntity()->SetFloat(Attr::RelVelocity, static_cast<MoveSetVelocity*>(msg.get())->GetRelVelocity());
 		}
 		else if (msg->CheckId(MoveJump::Id))
 		{
@@ -376,7 +377,7 @@ namespace PhysicsFeature
 	that I have stopped can listen to the message.
 	*/
 	void
-	CharacterPhysicsProperty::SendStop()
+	CharacterPhysicsProperty::SendStop() const
 	{
 		Ptr<MoveStop> msg = MoveStop::Create();
 		this->GetEntity()->SendSync(msg.upcast<Message>());
@@ -390,7 +391,7 @@ namespace PhysicsFeature
 	14-Feb-06   nico    bugfix: now really cancelled MoveFollow ;)
 	*/
 	void
-	CharacterPhysicsProperty::Stop()
+	CharacterPhysicsProperty::Stop() const
 	{
 		this->charPhysicsEntity->SetMotionVector(vector(0.0f, 0.0f, 0.0f));
 		this->GetEntity()->SetBool(Attr::Moving, false);
@@ -403,7 +404,7 @@ namespace PhysicsFeature
 	Handle a MoveDirection message.
 	*/
 	void
-	CharacterPhysicsProperty::HandleMoveDirection(MoveDirection* msg)
+	CharacterPhysicsProperty::HandleMoveDirection(MoveDirection* msg) const
 	{
 		n_assert(msg);
 
@@ -441,7 +442,7 @@ namespace PhysicsFeature
 	Handle a MoveTurn message.
 	*/
 	void
-	CharacterPhysicsProperty::HandleMoveTurn(MoveTurn* msg)
+	CharacterPhysicsProperty::HandleMoveTurn(MoveTurn* msg) const
 	{
 		n_assert(msg);
 		vector dir = msg->GetDirection();
@@ -474,7 +475,7 @@ namespace PhysicsFeature
 	Handle a MoveTurn message.
 	*/
 	void
-		CharacterPhysicsProperty::HandleMoveRotate(MoveRotate* msg)
+	CharacterPhysicsProperty::HandleMoveRotate(MoveRotate* msg) const
 	{
 		n_assert(msg);
 
@@ -487,7 +488,7 @@ namespace PhysicsFeature
 	Handle a SetTransform message.
 	*/
 	void
-		CharacterPhysicsProperty::HandleSetTransform(SetTransform* msg)
+	CharacterPhysicsProperty::HandleSetTransform(SetTransform* msg)
 	{
 		n_assert(msg);
 		this->charPhysicsEntity->SetTransform(msg->GetMatrix());
@@ -506,7 +507,7 @@ namespace PhysicsFeature
 	*/
 
 	const Ptr<Physics::Character>&
-		CharacterPhysicsProperty::GetPhysicsEntity() const
+	CharacterPhysicsProperty::GetPhysicsEntity() const
 	{
 		return this->charPhysicsEntity;
 	}
