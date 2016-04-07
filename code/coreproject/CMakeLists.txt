@@ -19,7 +19,10 @@ SET(PCH_files
 )
 SOURCE_GROUP("Precompiled" FILES ${PCH_files})
 
+
+set(P_NIDL_FILES "nidl/characterPhysics.nidl")
 LIST(APPEND ALLSRCS ${SRCSBASE} ${SRCSGAMESTATES} ${PCH_files})
+N_WRAP_ADD_NIDL_FILES(ALLSRCS ${P_NIDL_FILES})
 
 ADD_EXECUTABLE(coreproject ${ALLSRCS})
 SET_TARGET_PROPERTIES(coreproject PROPERTIES FOLDER "Core-Project")

@@ -68,7 +68,8 @@
         </Platform>
 
 		<NIDL>
-			<File name="nidl/NetworkCommands.nidl"/>
+			<File name="code/coreproject/nidl/NetworkCommands.nidl"/>
+			<File name="code/coreproject/nidl/characterPhysics.nidl"/>
 		</NIDL>
 		
     </Project>

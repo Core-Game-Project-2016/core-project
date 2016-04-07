@@ -772,26 +772,22 @@
                     <AnimEvents>false</AnimEvents>
                     <AnimSet>dummychar</AnimSet>
                     <BackAnim>runBackward</BackAnim>
-                    <CameraAngularGain>-50.000000</CameraAngularGain>
-                    <CameraAngularVelocity>1.000000</CameraAngularVelocity>
-                    <CameraDefaultRho>0.175000</CameraDefaultRho>
-                    <CameraDefaultTheta>-0.350000</CameraDefaultTheta>
-                    <CameraDistance>5.000000</CameraDistance>
-                    <CameraDistanceStep>1.000000</CameraDistanceStep>
                     <CameraFocus>true</CameraFocus>
+                    <CameraFov>90.000000</CameraFov>
                     <CameraHighStop>45.000000</CameraHighStop>
-                    <CameraLinearGain>-30.000000</CameraLinearGain>
-                    <CameraLowStop>-45.000000</CameraLowStop>
+                    <CameraJoint></CameraJoint>
                     <CameraMaxDistance>125.000000</CameraMaxDistance>
                     <CameraMinDistance>1.000000</CameraMinDistance>
-                    <CameraOffset>0.000000,1.500000,0.000000,0.000000</CameraOffset>
                     <CameraRelativeMove>true</CameraRelativeMove>
+                    <CameraSensitivity>3.000000</CameraSensitivity>
+                    <CameraTrackPosition>false</CameraTrackPosition>
                     <CapsuleHeight>2.000000</CapsuleHeight>
                     <CapsuleHover>0.000000</CapsuleHover>
                     <CapsuleRadius>0.500000</CapsuleRadius>
                     <CastShadows>true</CastShadows>
                     <CharacterSet>dummychar</CharacterSet>
                     <CharacterShape>capsule</CharacterShape>
+                    <CharacterSkin></CharacterSkin>
                     <CollisionDepthThreshold>0.001000</CollisionDepthThreshold>
                     <CollisionFeedback>true</CollisionFeedback>
                     <CrouchingCapsuleHeight>1.500000</CrouchingCapsuleHeight>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Nebula3>  
+   <AttributeLib>
+    <Dependency header="physicsfeature/physicsattr/physicsattributes.h" />
+  </AttributeLib>
+  
+  <Property name="PhysicsFeature::CharacterPhysicsProperty" derivedFrom="PhysicsFeature::PhysicsProperty" header="coreproject/characterPhysicsProperty.h">
+    <Attribute name="VelocityVector" serialize="true"/>
+    <Attribute name="RelVelocity"/>
+    <Attribute name="VelocityGain"/>
+    <Attribute name="AirVelocityGain"/>
+    <Attribute name="MaxVelocity"/>
+    <Attribute name="Following"/>
+    <Attribute name="Moving"/>
+    <Attribute name="TargetEntityId"/>
+    <Attribute name="JumpHeight"/>
+    <Attribute name="JumpSpeed"/>
+    <Attribute name="CollisionFeedback"/>
+    <Attribute name="CollisionDepthThreshold"/>
+    <Attribute name="CapsuleRadius"/>
+    <Attribute name="CapsuleHover"/>
+    <Attribute name="CapsuleHeight"/>
+    <Attribute name="CrouchingCapsuleHeight"/>    
+    <Attribute name="CharacterShape"/>
+    <Attribute name="AngularSmoothing"/>
+  </Property>
+</Nebula3>

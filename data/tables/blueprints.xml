@@ -22,6 +22,11 @@
         <Property type="ScriptingFeature::ScriptingProperty" />
     </Entity>
     <Entity cppclass="Entity" type="EmptyEntity" desc="Empty entity with no properties" />
+    <Entity cppclass="Entity" type="FreeCamera" desc="a camera entity with free fly movement">
+        <Property type="GraphicsFeature::FpsCameraProperty" />
+        <Property type="GraphicsFeature::InputProperty" masterOnly="true" />
+        <Property type="GraphicsFeature::FreeMoveProperty" />
+    </Entity>
     <Entity cppclass="Entity" type="Graphics">
         <Property type="GraphicsFeature::GraphicsProperty" />
         <Property type="ScriptingFeature::ScriptingProperty" />
@@ -41,12 +46,12 @@
     </Entity>
     <Entity cppclass="Entity" type="Player">
         <Property type="GraphicsFeature::InputProperty" />
-        <Property type="GraphicsFeature::ChaseCameraProperty" />
         <Property type="GraphicsFeature::ActorGraphicsProperty" />
-        <Property type="PhysicsFeature::ActorPhysicsProperty" />
         <Property type="GraphicsFeature::AnimationControlProperty" />
         <Property type="ScriptingFeature::ScriptingProperty" />
         <Property type="PhysicsFeature::InteractProperty" />
+        <Property type="PhysicsFeature::CharacterPhysicsProperty" />
+        <Property type="GraphicsFeature::FpsCameraProperty" />
     </Entity>
     <Entity cppclass="Entity" type="PostEffectBubble" desc="a bubble of post effects">
         <Property type="BaseGameFeature::TransformableProperty" />
