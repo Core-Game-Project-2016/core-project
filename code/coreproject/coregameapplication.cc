@@ -13,6 +13,7 @@
 #include "Coregameapplication.h"
 #include "coregraphics/displaymode.h"
 #include "ui/uicommands.h"
+#include <nidl/NetworkCommands.h>
 
 
 namespace Tools
@@ -141,6 +142,7 @@ CoreProjectApplication::SetupGameFeatures()
 	this->multiplayerFeature->Setup(MultiplayerFeature::MultiplayerFeatureUnit::LAN);
 
 	Commands::ScriptingCommands::Register();
+	Commands::NetworkCommands::Register();
 	Commands::PhysicsProtocol::Register();
 	Commands::GraphicsFeatureProtocol::Register();
 	Commands::BaseGameProtocol::Register();

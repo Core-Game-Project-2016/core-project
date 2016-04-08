@@ -115,9 +115,9 @@ CoreGameState::HandleInput()
 	if (kbd->KeyDown(Input::Key::G))
 	{
 		MultiplayerFeature::NetworkGame::Instance()->UpdateRoomList();
-		CoreProjectApplication::Instance()->FindStateHandlerByName("CoreState").cast<BaseGameFeature::GameStateHandler>()->SetLevelName("level");
-		CoreProjectApplication::Instance()->FindStateHandlerByName("CoreState").cast<BaseGameFeature::GameStateHandler>()->SetSetupMode(BaseGameFeature::GameStateHandler::LoadNetworkedLevel);
-		CoreProjectApplication::Instance()->RequestState("CoreState");
+		Tools::CoreProjectApplication::Instance()->FindStateHandlerByName("CoreState").cast<BaseGameFeature::GameStateHandler>()->SetLevelName("level");
+		Tools::CoreProjectApplication::Instance()->FindStateHandlerByName("CoreState").cast<BaseGameFeature::GameStateHandler>()->SetSetupMode(BaseGameFeature::GameStateHandler::LoadNetworkedLevel);
+		Tools::CoreProjectApplication::Instance()->RequestState("CoreState");
 	}
 
 	if (kbd->KeyDown(Input::Key::A))

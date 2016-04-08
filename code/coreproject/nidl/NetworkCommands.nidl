@@ -39,9 +39,10 @@
 		<Command name="startgame" fourcc="StGm" desc="start game">
 		  <Code>
 			<![CDATA[
-				Tools::CoreProjectApplication::Instance()->FindStateHandlerByName("CoreState").cast<BaseGameFeature::GameStateHandler>()->SetLevelName("demo_full");
-				Tools::CoreProjectApplication::Instance()->FindStateHandlerByName("CoreState").cast<BaseGameFeature::GameStateHandler>()->SetSetupMode(BaseGameFeature::GameStateHandler::LoadNetworkedLevel);
-				Tools::CoreProjectApplication::Instance()->RequestState("CoreState");
+				MultiplayerFeature::NetworkGame::Instance()->UpdateRoomList();
+		    Tools::CoreProjectApplication::Instance()->FindStateHandlerByName("CoreState").cast<BaseGameFeature::GameStateHandler>()->SetLevelName("level");
+		    Tools::CoreProjectApplication::Instance()->FindStateHandlerByName("CoreState").cast<BaseGameFeature::GameStateHandler>()->SetSetupMode(BaseGameFeature::GameStateHandler::LoadNetworkedLevel);
+		    Tools::CoreProjectApplication::Instance()->RequestState("CoreState");
 			]]>
 		  </Code>
 		</Command>
@@ -50,7 +51,7 @@
 		  <InArg name="ip" type="string"/>
 		  <Code>
 			<![CDATA[
-				MultiplayerFeature::NetworkGame::Instance()->JoinRoom(ip + "|61111",true);
+				MultiplayerFeature::NetworkGame::Instance()->JoinRoom("130.240.54.238|61111",true);
 			]]>
 		  </Code>
 		</Command>
