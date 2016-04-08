@@ -97,41 +97,7 @@ void
 CoreGameState::HandleInput()
 {
 	const Ptr<Input::Keyboard>& kbd = Input::InputServer::Instance()->GetDefaultKeyboard();
+	
 
-	// reload layout if key gets pressed
-	if (kbd->KeyDown(Input::Key::F1))
-	{
-        const Ptr<UI::UiLayout>& layout = UI::UiFeatureUnit::Instance()->GetLayout("main_menu");
-        layout->Reload();
-	}
-	if(kbd->KeyDown(Input::Key::X))
-	{
-		CoreProjectApplication::Instance()->RequestState("Exit");
-	}
-	if (kbd->KeyDown(Input::Key::F2))
-	{
-		EffectsFeature::EffectsFeatureUnit::Instance()->EmitGraphicsEffect(Math::matrix44::translation(n_rand(-5, 5), 10, n_rand(-5, 5)), "mdl:particles/newparticle.n3", 10.0f);
-	}
-	if (kbd->KeyDown(Input::Key::G))
-	{
-		MultiplayerFeature::NetworkGame::Instance()->UpdateRoomList();
-		Tools::CoreProjectApplication::Instance()->FindStateHandlerByName("CoreState").cast<BaseGameFeature::GameStateHandler>()->SetLevelName("level");
-		Tools::CoreProjectApplication::Instance()->FindStateHandlerByName("CoreState").cast<BaseGameFeature::GameStateHandler>()->SetSetupMode(BaseGameFeature::GameStateHandler::LoadNetworkedLevel);
-		Tools::CoreProjectApplication::Instance()->RequestState("CoreState");
-	}
-
-	if (kbd->KeyDown(Input::Key::A))
-	{
-		MultiplayerFeature::NetworkGame::Instance()->CreateRoom();
-	}
-	if (kbd->KeyDown(Input::Key::S))
-	{
-		MultiplayerFeature::NetworkServer::Instance()->SearchForGames();
-	}
-	if (kbd->KeyDown(Input::Key::D))
-	{
-		Util::String test = "130.240.54.238";
-		MultiplayerFeature::NetworkGame::Instance()->JoinRoom(test + "|61111", true);
-	}
 }
 } // namespace Tools
