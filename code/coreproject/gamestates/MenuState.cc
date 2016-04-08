@@ -3,14 +3,14 @@
 //  (C) 2013-2015 Individual contributors, see AUTHORS file
 //------------------------------------------------------------------------------
 #include "stdneb.h"
-#include "Coregamestate.h"
+#include "MenuState.h"
 #include "graphicsfeatureunit.h"
 #include "input/keyboard.h"
 #include "coreproject/coregameapplication.h"
 
 namespace Tools
 {
-__ImplementClass(Tools::CoreGameState, 'CMGS', BaseGameFeature::GameStateHandler);
+	__ImplementClass(Tools::MenuState, 'MMSt', BaseGameFeature::GameStateHandler);
 
 using namespace BaseGameFeature;
 using namespace GraphicsFeature;
@@ -20,7 +20,7 @@ using namespace Math;
 //------------------------------------------------------------------------------
 /**
 */
-CoreGameState::CoreGameState()
+MenuState::MenuState()
 {
 	// empty
 }
@@ -28,7 +28,7 @@ CoreGameState::CoreGameState()
 //------------------------------------------------------------------------------
 /**
 */
-CoreGameState::~CoreGameState()
+MenuState::~MenuState()
 {
 	// empty
 }
@@ -37,7 +37,7 @@ CoreGameState::~CoreGameState()
 /**
 */
 void 
-CoreGameState::OnStateEnter( const Util::String& prevState )
+MenuState::OnStateEnter(const Util::String& prevState)
 {
 	GameStateHandler::OnStateEnter(prevState);	
 
@@ -50,7 +50,7 @@ CoreGameState::OnStateEnter( const Util::String& prevState )
 /**
 */
 void 
-CoreGameState::OnStateLeave( const Util::String& nextState )
+MenuState::OnStateLeave(const Util::String& nextState)
 {
 	GameStateHandler::OnStateLeave(nextState);
 }
@@ -59,7 +59,7 @@ CoreGameState::OnStateLeave( const Util::String& nextState )
 /**
 */
 Util::String 
-CoreGameState::OnFrame()
+MenuState::OnFrame()
 {
 	//handle all user input
 	if (Input::InputServer::HasInstance())
@@ -74,7 +74,7 @@ CoreGameState::OnFrame()
 /**
 */
 void 
-CoreGameState::OnLoadBefore()
+MenuState::OnLoadBefore()
 {
 	
 }
@@ -83,17 +83,16 @@ CoreGameState::OnLoadBefore()
 /**
 */
 void 
-CoreGameState::OnLoadAfter()
+MenuState::OnLoadAfter()
 {
-	this->player = FactoryManager::Instance()->CreateEntityByTemplate("Player", "dummychar");
-	EntityManager::Instance()->AttachEntity(this->player);
+
 }
 
 //------------------------------------------------------------------------------
 /**
 */
 void 
-CoreGameState::HandleInput()
+MenuState::HandleInput()
 {
 	const Ptr<Input::Keyboard>& kbd = Input::InputServer::Instance()->GetDefaultKeyboard();
 	

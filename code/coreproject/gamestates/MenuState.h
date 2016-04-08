@@ -8,20 +8,18 @@
     (C) 2013-2014 Individual contributors, see AUTHORS file
 */
 #include "statehandlers/gamestatehandler.h"
-#include "graphics/spotlightentity.h"
-#include "game/entity.h"
 
 //------------------------------------------------------------------------------
 namespace Tools
 {
-class CoreGameState : public BaseGameFeature::GameStateHandler
+class MenuState : public BaseGameFeature::GameStateHandler
 {
-	__DeclareClass(CoreGameState);
+	__DeclareClass(MenuState);
 public:
 	/// constructor
-	CoreGameState();
+	MenuState();
 	/// destructor
-	virtual ~CoreGameState();
+	virtual ~MenuState();
 
 	/// called when the state represented by this state handler is entered
 	void OnStateEnter(const Util::String& prevState) override;
@@ -38,7 +36,6 @@ public:
 	void HandleInput();
 
 private:
-	Ptr<Game::Entity> player;
 	
 }; 
 } // namespace Tools

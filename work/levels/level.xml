@@ -25,77 +25,7 @@
                     <Instanced>false</Instanced>
                 </Attributes>
             </Object>
-            <Object category="Player">
-                <Attributes>
-                    <_ID>level|object|Player|dummychar_0</_ID>
-                    <Id>dummychar</Id>
-                    <_Level>level</_Level>
-                    <_Layers>Default</_Layers>
-                    <Guid>a5f68d76-4cb8-4334-be62-58a25e0f25bb</Guid>
-                    <ParentGuid>00000000-0000-0000-0000-000000000000</ParentGuid>
-                    <Transform>1.000000, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 35.786774, 11.368657, 0.000000, 1.000000</Transform>
-                    <AirVelocityGain>0.050000</AirVelocityGain>
-                    <AngularSmoothing>true</AngularSmoothing>
-                    <AnimEvents>false</AnimEvents>
-                    <AnimSet>dummychar</AnimSet>
-                    <BackAnim>runBackward</BackAnim>
-                    <CameraAngularVelocity>1.000000</CameraAngularVelocity>
-                    <CameraDistance>5.000000</CameraDistance>
-                    <CameraFocus>true</CameraFocus>
-                    <CameraFov>90.000000</CameraFov>
-                    <CameraHighStop>45.000000</CameraHighStop>
-                    <CameraJoint></CameraJoint>
-                    <CameraMaxDistance>125.000000</CameraMaxDistance>
-                    <CameraMinDistance>1.000000</CameraMinDistance>
-                    <CameraRelativeMove>true</CameraRelativeMove>
-                    <CameraSensitivity>3.000000</CameraSensitivity>
-                    <CameraTrackPosition>false</CameraTrackPosition>
-                    <CapsuleHeight>2.000000</CapsuleHeight>
-                    <CapsuleHover>0.000000</CapsuleHover>
-                    <CapsuleRadius>0.500000</CapsuleRadius>
-                    <CastShadows>true</CastShadows>
-                    <CharacterSet>dummychar</CharacterSet>
-                    <CharacterShape>capsule</CharacterShape>
-                    <CharacterSkin></CharacterSkin>
-                    <CollisionDepthThreshold>0.001000</CollisionDepthThreshold>
-                    <CollisionFeedback>false</CollisionFeedback>
-                    <CrouchingCapsuleHeight>1.500000</CrouchingCapsuleHeight>
-                    <DeathAnim>death</DeathAnim>
-                    <EntityScript></EntityScript>
-                    <Following>false</Following>
-                    <Graphics>placeholder/dummyCharacter</Graphics>
-                    <IdleAnim>standing</IdleAnim>
-                    <InputFocus>true</InputFocus>
-                    <InputMouseGrab>false</InputMouseGrab>
-                    <Instanced>false</Instanced>
-                    <JumpAnim>jump</JumpAnim>
-                    <JumpHeight>20.000000</JumpHeight>
-                    <JumpSpeed>10.000000</JumpSpeed>
-                    <LoadSynced>false</LoadSynced>
-                    <LoopStartAnimation>true</LoopStartAnimation>
-                    <Mass>1.000000</Mass>
-                    <MaxVelocity>0.700000</MaxVelocity>
-                    <Moving>false</Moving>
-                    <Name>Dummy Character</Name>
-                    <PhysicMaterial>InvalidMaterial</PhysicMaterial>
-                    <Physics></Physics>
-                    <Placeholder>placeholder/box</Placeholder>
-                    <RelVelocity>0.200000</RelVelocity>
-                    <StartAnimation>standing</StartAnimation>
-                    <Static>false</Static>
-                    <StrafeLeftAnim>strafeLeft</StrafeLeftAnim>
-                    <StrafeRightAnim>strafeRight</StrafeRightAnim>
-                    <TargetEntityId>0</TargetEntityId>
-                    <UseAnim>use</UseAnim>
-                    <UseFallbackAnim>false</UseFallbackAnim>
-                    <UseReversedAnim>false</UseReversedAnim>
-                    <UseStrafeAnim>true</UseStrafeAnim>
-                    <VelocityGain>0.950000</VelocityGain>
-                    <VelocityVector>0.000000,0.000000,0.000000,0.000000</VelocityVector>
-                    <WalkAnim>runForward</WalkAnim>
-                </Attributes>
-            </Object>
         </Entities>
-        <Global WorldCenter="23.036102,4.347939,-828.182983,1.000000" WorldExtents="683.550537,17.563799,1983.657959,0.000000" PostEffectPreset="Default" GlobalLightTransform="1.000000, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000" _Layers="Default" />
+        <Global WorldCenter="23.036102,3.349937,-828.182983,1.000000" WorldExtents="683.550537,15.567794,1983.657959,0.000000" PostEffectPreset="Default" GlobalLightTransform="1.000000, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000" _Layers="Default" />
     </NebulaLevel>
 </Level>

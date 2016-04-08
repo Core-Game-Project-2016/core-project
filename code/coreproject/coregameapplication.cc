@@ -5,7 +5,8 @@
 #include "stdneb.h"
 #include "graphics/graphicsprotocol.h"
 #include "messaging/message.h"
-#include "gamestates/coregamestate.h"
+#include "gamestates/CoreGameState.h"
+#include "gamestates/MenuState.h"
 #include "physicsfeature/physicsprotocol.h"
 #include "graphicsfeature/graphicsfeatureprotocol.h"
 #include "basegamefeature/basegameprotocol.h"
@@ -71,17 +72,21 @@ void CoreProjectApplication::Close()
 void 
 CoreProjectApplication::SetupStateHandlers()
 {
-	Ptr<CoreGameState> gameState = CoreGameState::Create();
-	gameState->SetSetupMode(CoreGameState::LoadLevel);
-	gameState->SetName("CoreState");
+	Ptr<MenuState> menuState = MenuState::Create();
+	menuState->SetSetupMode(MenuState::LoadLevel);
+	menuState->SetName("MenuState");
 	// select the level to be loaded explicitly instead of the default one
-	gameState->SetLevelName("menu_level");
+	menuState->SetLevelName("menu_level");
 
-	this->AddStateHandler(gameState.get());
-
-	this->SetState("CoreState");
+	this->AddStateHandler(menuState.get());
 
 
+	Ptr<CoreGameState> coreState = CoreGameState::Create();
+	coreState->SetName("CoreGameState");
+
+	this->AddStateHandler(coreState.get());
+
+	this->SetState("MenuState");
 }
 
 //------------------------------------------------------------------------------

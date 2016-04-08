@@ -40,9 +40,9 @@
 		  <Code>
 			<![CDATA[
 				MultiplayerFeature::NetworkGame::Instance()->UpdateRoomList();
-		    Tools::CoreProjectApplication::Instance()->FindStateHandlerByName("CoreState").cast<BaseGameFeature::GameStateHandler>()->SetLevelName("level");
-		    Tools::CoreProjectApplication::Instance()->FindStateHandlerByName("CoreState").cast<BaseGameFeature::GameStateHandler>()->SetSetupMode(BaseGameFeature::GameStateHandler::LoadNetworkedLevel);
-		    Tools::CoreProjectApplication::Instance()->RequestState("CoreState");
+		    Tools::CoreProjectApplication::Instance()->FindStateHandlerByName("CoreGameState").cast<BaseGameFeature::GameStateHandler>()->SetLevelName("level");
+		    Tools::CoreProjectApplication::Instance()->FindStateHandlerByName("CoreGameState").cast<BaseGameFeature::GameStateHandler>()->SetSetupMode(BaseGameFeature::GameStateHandler::LoadNetworkedLevel);
+		    Tools::CoreProjectApplication::Instance()->RequestState("CoreGameState");
 			]]>
 		  </Code>
 		</Command>
