@@ -51,7 +51,7 @@
 		  <InArg name="ip" type="string"/>
 		  <Code>
 			<![CDATA[
-				MultiplayerFeature::NetworkGame::Instance()->JoinRoom("130.240.54.238|61111",true);
+				MultiplayerFeature::NetworkGame::Instance()->JoinRoom(ip + "|61111",true);
 			]]>
 		  </Code>
 		</Command>
