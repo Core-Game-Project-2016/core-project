@@ -26,15 +26,16 @@ function Back()
 	showlayout(currentLayout);
 end;
 
-function CreateLobbykina()
+function CreateLobby()
 	SwitchLayout('lobby');
 	createlobby();
 end;
 
 function JoinLobby(ip, enter)
 	if enter then
-		SwitchLayout('lobby');
+		refreshserverlist();
 		joinlobby(ip);
+		SwitchLayout('lobby');
 	end;
 end;
 
