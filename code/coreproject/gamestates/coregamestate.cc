@@ -114,6 +114,7 @@ CoreGameState::HandleInput()
 	}
 	if (kbd->KeyDown(Input::Key::G))
 	{
+		MultiplayerFeature::NetworkGame::Instance()->UpdateRoomList();
 		CoreProjectApplication::Instance()->FindStateHandlerByName("CoreState").cast<BaseGameFeature::GameStateHandler>()->SetLevelName("demo_full");
 		CoreProjectApplication::Instance()->FindStateHandlerByName("CoreState").cast<BaseGameFeature::GameStateHandler>()->SetSetupMode(BaseGameFeature::GameStateHandler::LoadNetworkedLevel);
 		CoreProjectApplication::Instance()->RequestState("CoreState");
@@ -125,7 +126,11 @@ CoreGameState::HandleInput()
 	}
 	if (kbd->KeyDown(Input::Key::S))
 	{
-		Util::String test = "130.240.54.242";
+		MultiplayerFeature::NetworkServer::Instance()->SearchForGames();
+	}
+	if (kbd->KeyDown(Input::Key::D))
+	{
+		Util::String test = "130.240.54.238";
 		MultiplayerFeature::NetworkGame::Instance()->JoinRoom(test + "|61111", true);
 	}
 }
