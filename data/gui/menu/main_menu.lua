@@ -33,7 +33,6 @@ end;
 
 function JoinLobby(ip, enter)
 	if enter then
-		refreshserverlist();
 		joinlobby(ip);
 		SwitchLayout('lobby');
 	end;
@@ -43,4 +42,9 @@ function StartGame()
 	startgame();
 	previousLayout = currentLayout;
 	hidelayout(currentLayout);
+end;
+
+function DirectConnect()
+	SwitchLayout('direct_connect');
+	refreshserverlist();
 end;
