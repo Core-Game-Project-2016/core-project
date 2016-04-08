@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Level>
+    <NebulaLevel Version="2" name="kina" id="kina">
+        <Layers>
+            <Layer name="Default" autoload="true" visible="true" locked="false" />
+        </Layers>
+        <Entities>
+            <Object category="_Environment">
+                <Attributes>
+                    <_ID>kina|environment|levelground_0</_ID>
+                    <Id>levelground</Id>
+                    <_Level>kina</_Level>
+                    <_Layers>Default</_Layers>
+                    <Guid>302b20e4-10da-42f0-993d-3c620a41184b</Guid>
+                    <ParentGuid>00000000-0000-0000-0000-000000000000</ParentGuid>
+                    <Transform>1.000000, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000</Transform>
+                    <CastShadows>true</CastShadows>
+                    <PhysicMaterial>EmptyWood</PhysicMaterial>
+                    <Graphics>level/levelground</Graphics>
+                    <StartAnimation></StartAnimation>
+                    <LoadSynced>false</LoadSynced>
+                    <CollisionEnabled>true</CollisionEnabled>
+                    <DynamicObject>false</DynamicObject>
+                    <VelocityVector>0.000000,0.000000,0.000000,0.000000</VelocityVector>
+                    <Instanced>false</Instanced>
+                </Attributes>
+            </Object>
+            <Object category="Camera">
+                <Attributes>
+                    <_ID>kina|object|Camera|Camera_0</_ID>
+                    <Id>Camera</Id>
+                    <_Level>kina</_Level>
+                    <_Layers>Default</_Layers>
+                    <Guid>6ee56036-c59f-4f9c-b388-111180c9c898</Guid>
+                    <ParentGuid>00000000-0000-0000-0000-000000000000</ParentGuid>
+                    <Transform>1.000000, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 1496.457642, 1487.291260, 461.392578, 1.000000</Transform>
+                    <CameraFocus>true</CameraFocus>
+                    <CameraRelativeMove>true</CameraRelativeMove>
+                    <Graphics>examples/camera</Graphics>
+                    <InputFocus>true</InputFocus>
+                    <InputMouseGrab>false</InputMouseGrab>
+                    <MayaCameraCenterOfInterest>0.000000,0.000000,0.000000,0.000000</MayaCameraCenterOfInterest>
+                    <MayaCameraDefaultUpVec>0.000000,1.000000,0.000000,1.000000</MayaCameraDefaultUpVec>
+                    <MayaCameraRenderCenterOfInterest>false</MayaCameraRenderCenterOfInterest>
+                    <Name></Name>
+                    <Placeholder>examples/camera</Placeholder>
+                </Attributes>
+            </Object>
+        </Entities>
+        <Global WorldCenter="589.109253,741.678650,-679.059692,1.000000" WorldExtents="1815.696777,1492.225220,2281.904541,0.000000" PostEffectPreset="Default" GlobalLightTransform="1.000000, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000" _Layers="Default" />
+    </NebulaLevel>
+</Level>
