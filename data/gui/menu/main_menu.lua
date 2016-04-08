@@ -40,7 +40,6 @@ function JoinLobby(ip, enter)
 end;
 
 function StartGame()
-	loadlevel('demo_full');
 	startgame();
 	previousLayout = currentLayout;
 	hidelayout(currentLayout);
