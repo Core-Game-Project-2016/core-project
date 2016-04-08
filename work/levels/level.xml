@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Level>
-    <NebulaLevel Version="2" name="kina" id="kina">
+    <NebulaLevel Version="2" name="level" id="level">
         <Layers>
             <Layer name="Default" autoload="true" visible="true" locked="false" />
         </Layers>
         <Entities>
             <Object category="_Environment">
                 <Attributes>
-                    <_ID>kina|environment|levelground_0</_ID>
+                    <_ID>level|environment|levelground_0</_ID>
                     <Id>levelground</Id>
-                    <_Level>kina</_Level>
+                    <_Level>level</_Level>
                     <_Layers>Default</_Layers>
                     <Guid>302b20e4-10da-42f0-993d-3c620a41184b</Guid>
                     <ParentGuid>00000000-0000-0000-0000-000000000000</ParentGuid>
@@ -25,28 +25,77 @@
                     <Instanced>false</Instanced>
                 </Attributes>
             </Object>
-            <Object category="Camera">
+            <Object category="Player">
                 <Attributes>
-                    <_ID>kina|object|Camera|Camera_0</_ID>
-                    <Id>Camera</Id>
-                    <_Level>kina</_Level>
+                    <_ID>level|object|Player|dummychar_0</_ID>
+                    <Id>dummychar</Id>
+                    <_Level>level</_Level>
                     <_Layers>Default</_Layers>
-                    <Guid>6ee56036-c59f-4f9c-b388-111180c9c898</Guid>
+                    <Guid>a5f68d76-4cb8-4334-be62-58a25e0f25bb</Guid>
                     <ParentGuid>00000000-0000-0000-0000-000000000000</ParentGuid>
-                    <Transform>1.000000, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 1496.457642, 1487.291260, 461.392578, 1.000000</Transform>
+                    <Transform>1.000000, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 35.786774, 11.368657, 0.000000, 1.000000</Transform>
+                    <AirVelocityGain>0.050000</AirVelocityGain>
+                    <AngularSmoothing>true</AngularSmoothing>
+                    <AnimEvents>false</AnimEvents>
+                    <AnimSet>dummychar</AnimSet>
+                    <BackAnim>runBackward</BackAnim>
+                    <CameraAngularVelocity>1.000000</CameraAngularVelocity>
+                    <CameraDistance>5.000000</CameraDistance>
                     <CameraFocus>true</CameraFocus>
+                    <CameraFov>90.000000</CameraFov>
+                    <CameraHighStop>45.000000</CameraHighStop>
+                    <CameraJoint></CameraJoint>
+                    <CameraMaxDistance>125.000000</CameraMaxDistance>
+                    <CameraMinDistance>1.000000</CameraMinDistance>
                     <CameraRelativeMove>true</CameraRelativeMove>
-                    <Graphics>examples/camera</Graphics>
+                    <CameraSensitivity>3.000000</CameraSensitivity>
+                    <CameraTrackPosition>false</CameraTrackPosition>
+                    <CapsuleHeight>2.000000</CapsuleHeight>
+                    <CapsuleHover>0.000000</CapsuleHover>
+                    <CapsuleRadius>0.500000</CapsuleRadius>
+                    <CastShadows>true</CastShadows>
+                    <CharacterSet>dummychar</CharacterSet>
+                    <CharacterShape>capsule</CharacterShape>
+                    <CharacterSkin></CharacterSkin>
+                    <CollisionDepthThreshold>0.001000</CollisionDepthThreshold>
+                    <CollisionFeedback>false</CollisionFeedback>
+                    <CrouchingCapsuleHeight>1.500000</CrouchingCapsuleHeight>
+                    <DeathAnim>death</DeathAnim>
+                    <EntityScript></EntityScript>
+                    <Following>false</Following>
+                    <Graphics>placeholder/dummyCharacter</Graphics>
+                    <IdleAnim>standing</IdleAnim>
                     <InputFocus>true</InputFocus>
                     <InputMouseGrab>false</InputMouseGrab>
-                    <MayaCameraCenterOfInterest>0.000000,0.000000,0.000000,0.000000</MayaCameraCenterOfInterest>
-                    <MayaCameraDefaultUpVec>0.000000,1.000000,0.000000,1.000000</MayaCameraDefaultUpVec>
-                    <MayaCameraRenderCenterOfInterest>false</MayaCameraRenderCenterOfInterest>
-                    <Name></Name>
-                    <Placeholder>examples/camera</Placeholder>
+                    <Instanced>false</Instanced>
+                    <JumpAnim>jump</JumpAnim>
+                    <JumpHeight>20.000000</JumpHeight>
+                    <JumpSpeed>10.000000</JumpSpeed>
+                    <LoadSynced>false</LoadSynced>
+                    <LoopStartAnimation>true</LoopStartAnimation>
+                    <Mass>1.000000</Mass>
+                    <MaxVelocity>0.700000</MaxVelocity>
+                    <Moving>false</Moving>
+                    <Name>Dummy Character</Name>
+                    <PhysicMaterial>InvalidMaterial</PhysicMaterial>
+                    <Physics></Physics>
+                    <Placeholder>placeholder/box</Placeholder>
+                    <RelVelocity>0.200000</RelVelocity>
+                    <StartAnimation>standing</StartAnimation>
+                    <Static>false</Static>
+                    <StrafeLeftAnim>strafeLeft</StrafeLeftAnim>
+                    <StrafeRightAnim>strafeRight</StrafeRightAnim>
+                    <TargetEntityId>0</TargetEntityId>
+                    <UseAnim>use</UseAnim>
+                    <UseFallbackAnim>false</UseFallbackAnim>
+                    <UseReversedAnim>false</UseReversedAnim>
+                    <UseStrafeAnim>true</UseStrafeAnim>
+                    <VelocityGain>0.950000</VelocityGain>
+                    <VelocityVector>0.000000,0.000000,0.000000,0.000000</VelocityVector>
+                    <WalkAnim>runForward</WalkAnim>
                 </Attributes>
             </Object>
         </Entities>
-        <Global WorldCenter="589.109253,741.678650,-679.059692,1.000000" WorldExtents="1815.696777,1492.225220,2281.904541,0.000000" PostEffectPreset="Default" GlobalLightTransform="1.000000, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000" _Layers="Default" />
+        <Global WorldCenter="23.036102,4.347939,-828.182983,1.000000" WorldExtents="683.550537,17.563799,1983.657959,0.000000" PostEffectPreset="Default" GlobalLightTransform="1.000000, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000" _Layers="Default" />
     </NebulaLevel>
 </Level>
