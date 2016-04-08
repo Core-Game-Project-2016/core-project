@@ -20,7 +20,7 @@ SET(PCH_files
 SOURCE_GROUP("Precompiled" FILES ${PCH_files})
 
 
-set(P_NIDL_FILES "nidl/characterPhysics.nidl")
+set(P_NIDL_FILES "nidl/characterPhysics.nidl" "nidl/NetworkCommands.nidl")
 LIST(APPEND ALLSRCS ${SRCSBASE} ${SRCSGAMESTATES} ${PCH_files})
 N_WRAP_ADD_NIDL_FILES(ALLSRCS ${P_NIDL_FILES})
 

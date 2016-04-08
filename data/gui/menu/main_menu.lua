@@ -26,11 +26,7 @@ function Back()
 	showlayout(currentLayout);
 end;
 
-function Exit()
-	exit();
-end;
-
-function CreateLobby()
+function CreateLobbykina()
 	SwitchLayout('lobby');
 	createlobby();
 end;

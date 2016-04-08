@@ -118,5 +118,15 @@ CoreGameState::HandleInput()
 		CoreProjectApplication::Instance()->FindStateHandlerByName("CoreState").cast<BaseGameFeature::GameStateHandler>()->SetSetupMode(BaseGameFeature::GameStateHandler::LoadNetworkedLevel);
 		CoreProjectApplication::Instance()->RequestState("CoreState");
 	}
+
+	if (kbd->KeyDown(Input::Key::A))
+	{
+		MultiplayerFeature::NetworkGame::Instance()->CreateRoom();
+	}
+	if (kbd->KeyDown(Input::Key::S))
+	{
+		Util::String test = "130.240.54.242";
+		MultiplayerFeature::NetworkGame::Instance()->JoinRoom(test + "|61111", true);
+	}
 }
 } // namespace Tools

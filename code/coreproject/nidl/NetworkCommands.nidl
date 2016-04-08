@@ -7,7 +7,7 @@
 		<Dependency header="multiplayer/networkgame.h"/>
 		<Dependency header="multiplayer/networkserver.h"/>
 		<Dependency header="basegamefeature/statehandlers/gamestatehandler.h"/>
-		<Dependency header="Coregameapplication.h"/>
+		<Dependency header="coreproject/coregameapplication.h"/>
 		<Dependency header="ui/uilayout.h"/>
 		<Dependency header="ui/uifeatureunit.h"/>
 		
@@ -39,9 +39,9 @@
 		<Command name="startgame" fourcc="StGm" desc="start game">
 		  <Code>
 			<![CDATA[
-				CoreProjectApplication::Instance()->FindStateHandlerByName("CoreState").cast<BaseGameFeature::GameStateHandler>()->SetLevelName("demo_full");
-				CoreProjectApplication::Instance()->FindStateHandlerByName("CoreState").cast<BaseGameFeature::GameStateHandler>()->SetSetupMode(BaseGameFeature::GameStateHandler::LoadNetworkedLevel);
-				CoreProjectApplication::Instance()->RequestState("CoreState");
+				Tools::CoreProjectApplication::Instance()->FindStateHandlerByName("CoreState").cast<BaseGameFeature::GameStateHandler>()->SetLevelName("demo_full");
+				Tools::CoreProjectApplication::Instance()->FindStateHandlerByName("CoreState").cast<BaseGameFeature::GameStateHandler>()->SetSetupMode(BaseGameFeature::GameStateHandler::LoadNetworkedLevel);
+				Tools::CoreProjectApplication::Instance()->RequestState("CoreState");
 			]]>
 		  </Code>
 		</Command>
@@ -51,14 +51,6 @@
 		  <Code>
 			<![CDATA[
 				MultiplayerFeature::NetworkGame::Instance()->JoinRoom(ip + "|61111",true);
-			]]>
-		  </Code>
-		</Command>
-		
-		<Command name="exit" fourcc="exIT" desc="exit game">
-		  <Code>
-			<![CDATA[
-				CoreProjectApplication::Instance()->RequestState("Exit");
 			]]>
 		  </Code>
 		</Command>
