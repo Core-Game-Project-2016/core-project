@@ -66,15 +66,6 @@ CoreGameState::OnFrame()
 	{
 		this->HandleInput();
 	}
-	if (player != NULL)
-	{
-		if (!this->focusset)
-		{
-			FocusManager::Instance()->SetCameraFocusEntity(this->player, false);
-			FocusManager::Instance()->SetInputFocusEntity(this->player, false);
-			this->focusset = true;
-		}
-	}
 	return GameStateHandler::OnFrame();
 }
 
@@ -115,6 +106,14 @@ CoreGameState::HandleInput()
 		EntityManager::Instance()->AttachEntity(this->player);
 		FocusManager::Instance()->SetCameraFocusEntity(this->player, false);
 		FocusManager::Instance()->SetInputFocusEntity(this->player, false);
+	}
+	if(kbd->KeyPressed(Input::Key::J))
+	{
+		if (player != NULL)
+		{
+			FocusManager::Instance()->SetCameraFocusEntity(this->player, false);
+			FocusManager::Instance()->SetInputFocusEntity(this->player, false);
+		}
 	}
 
 }
