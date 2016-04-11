@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Level>
+    <NebulaLevel Version="2" name="demo_full" id="demo_full">
+        <Layers>
+            <Layer name="Default" autoload="true" visible="true" locked="false" />
+            <Layer name="New layer" autoload="true" visible="true" locked="false" />
+            <Layer name="Trees" autoload="true" visible="true" locked="false" />
+        </Layers>
+        <Entities>
+            <Object category="_Environment">
+                <Attributes>
+                    <_ID>demo_full|environment|envvironmentLevel_0</_ID>
+                    <Id>envvironmentLevel</Id>
+                    <_Level>demo_full</_Level>
+                    <_Layers>Default</_Layers>
+                    <Guid>6b148b5b-f203-45d0-97c6-f8140d965d37</Guid>
+                    <ParentGuid>00000000-0000-0000-0000-000000000000</ParentGuid>
+                    <Transform>1.000000, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, -1.090102, 0.000000, 1.000000</Transform>
+                    <CastShadows>true</CastShadows>
+                    <PhysicMaterial>EmptyWood</PhysicMaterial>
+                    <Graphics>level/envvironmentLevel</Graphics>
+                    <StartAnimation></StartAnimation>
+                    <LoadSynced>false</LoadSynced>
+                    <CollisionEnabled>true</CollisionEnabled>
+                    <DynamicObject>false</DynamicObject>
+                    <VelocityVector>0.000000,0.000000,0.000000,0.000000</VelocityVector>
+                    <Instanced>false</Instanced>
+                </Attributes>
+            </Object>
+        </Entities>
+        <Global WorldCenter="-5.342445,17.151730,-189.188492,1.000000" WorldExtents="169.724655,48.385185,449.718597,0.000000" PostEffectPreset="Default" GlobalLightTransform="-0.270318, -0.644360, 0.715351, 0.000000, 0.875152, -0.474150, -0.096391, 0.000000, 0.401295, 0.599985, 0.692085, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000" _Layers="Default;New layer;Trees" />
+    </NebulaLevel>
+</Level>
