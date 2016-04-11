@@ -19,8 +19,16 @@
 			]]>
 		  </Code>
 		</Command>
-		
-		<Command name="refreshlobby" fourcc="rfsH" desc="refreshlobby">
+
+    <Command name="cancellobby" fourcc="cLoB" desc="cancellobby">
+      <Code>
+        <![CDATA[
+				MultiplayerFeature::NetworkGame::Instance()->CancelRoom();
+			]]>
+      </Code>
+    </Command>
+
+    <Command name="refreshlobby" fourcc="rfsH" desc="refreshlobby">
 		  <Code>
 			<![CDATA[
 				MultiplayerFeature::NetworkGame::Instance()->UpdateRoomList();

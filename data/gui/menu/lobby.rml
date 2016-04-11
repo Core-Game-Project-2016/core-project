@@ -5,8 +5,8 @@
 <body class="lobby">
 	
 	<ul class="button_list">
-		<li class="button" onclick="scr.StartGame()">Start Game</li>
-		<li class="button" onclick="scr.Back()">Back</li>
+		<li class="button" onclick="scr.startgame()">Start Game</li>
+		<li class="button" onclick="scr.CancelLobby()">Back</li>
 	</ul>
 </body>
 </template>

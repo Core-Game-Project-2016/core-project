@@ -27,12 +27,18 @@ function Back()
 end;
 
 function CreateLobby()
-	SwitchLayout('lobby');
 	createlobby();
+	SwitchLayout('lobby');
+end;
+
+function CancelLobby()
+	cancellobby();
+	Back();
 end;
 
 function JoinLobby(ip, enter)
 	if enter then
+		refreshserverlist();
 		joinlobby(ip);
 		SwitchLayout('lobby');
 	end;
@@ -40,11 +46,4 @@ end;
 
 function StartGame()
 	startgame();
-	previousLayout = currentLayout;
-	hidelayout(currentLayout);
-end;
-
-function DirectConnect()
-	SwitchLayout('direct_connect');
-	refreshserverlist();
 end;

@@ -6,7 +6,7 @@
 	<div id="title_bar">
 		<ul class="button_list">
 			<li class="button" onclick="scr.CreateLobby()">Host Game</li>
-			<li class="button" onclick="scr.DirectConnect()">Direct Connect</li>
+			<li class="button" onclick="scr.SwitchLayout('direct_connect')">Direct Connect</li>
 			<li class="button" onclick="scr.SwitchLayout('serverlist')">Server Browser</li>
 			<li class="button" onclick="scr.SwitchLayout('options')">Options</li>
 			<li class="button" onclick="scr.SwitchLayout('about')">About</li>
