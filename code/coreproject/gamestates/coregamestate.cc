@@ -66,8 +66,11 @@ CoreGameState::OnFrame()
 	{
 		this->HandleInput();
 	}
-	FocusManager::Instance()->SetCameraFocusEntity(this->player, false);
-	FocusManager::Instance()->SetInputFocusEntity(this->player, false);
+	if (player)
+	{
+		FocusManager::Instance()->SetCameraFocusEntity(this->player, false);
+		FocusManager::Instance()->SetInputFocusEntity(this->player, false);
+	}
 	return GameStateHandler::OnFrame();
 }
 
@@ -86,13 +89,15 @@ CoreGameState::OnLoadBefore()
 void 
 CoreGameState::OnLoadAfter()
 {
-	this->player = FactoryManager::Instance()->CreateEntityByTemplate("Player", "dummychar");
-	EntityManager::Instance()->AttachEntity(this->player);
-	FocusManager::Instance()->SetCameraFocusEntity(this->player, false);
-	FocusManager::Instance()->SetInputFocusEntity(this->player, false);
+
 }
 
-//------------------------------------------------------------------------------
+void CoreGameState::OnNetworkStarted()
+{
+	
+}
+
+	//------------------------------------------------------------------------------
 /**
 */
 void 
@@ -100,6 +105,13 @@ CoreGameState::HandleInput()
 {
 	const Ptr<Input::Keyboard>& kbd = Input::InputServer::Instance()->GetDefaultKeyboard();
 	
+	if (kbd->KeyPressed(Input::Key::H))
+	{
+		this->player = FactoryManager::Instance()->CreateEntityByTemplate("Player", "dummychar");
+		EntityManager::Instance()->AttachEntity(this->player);
+		FocusManager::Instance()->SetCameraFocusEntity(this->player, false);
+		FocusManager::Instance()->SetInputFocusEntity(this->player, false);
+	}
 
 }
 } // namespace Tools

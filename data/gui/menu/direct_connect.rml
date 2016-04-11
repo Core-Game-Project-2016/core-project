@@ -4,7 +4,7 @@
 </head>
 <body class="connect">
 	
-	<input type="text" onchange="src.JoinLobby()"/>
+	<input type="text" onchange="src.JoinLobby()" value="130.240.54.238"/>
 
 	<ul class="button_list">
 		<li class="button" onclick="scr.Back()">Back</li>

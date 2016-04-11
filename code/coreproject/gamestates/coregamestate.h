@@ -34,6 +34,8 @@ public:
 	/// called after entities are loaded
 	void OnLoadAfter() override;
 
+	virtual void OnNetworkStarted();
+
 	// handle all user input; called @ LevelEditorState::OnFrame()
 	void HandleInput();
 
