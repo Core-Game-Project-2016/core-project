@@ -100,14 +100,14 @@ CoreGameState::HandleInput()
 {
 	const Ptr<Input::Keyboard>& kbd = Input::InputServer::Instance()->GetDefaultKeyboard();
 	
-	if (kbd->KeyPressed(Input::Key::H))
+	if (kbd->KeyDown(Input::Key::H))
 	{
 		this->player = FactoryManager::Instance()->CreateEntityByTemplate("Player", "dummychar");
 		EntityManager::Instance()->AttachEntity(this->player);
 		FocusManager::Instance()->SetCameraFocusEntity(this->player, false);
 		FocusManager::Instance()->SetInputFocusEntity(this->player, false);
 	}
-	if(kbd->KeyPressed(Input::Key::J))
+	if (kbd->KeyDown(Input::Key::J))
 	{
 		if (player != NULL)
 		{
