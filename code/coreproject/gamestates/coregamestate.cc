@@ -20,7 +20,7 @@ using namespace Math;
 //------------------------------------------------------------------------------
 /**
 */
-CoreGameState::CoreGameState() : focusset(false)
+CoreGameState::CoreGameState()
 {
 	// empty
 }
@@ -40,7 +40,7 @@ void
 CoreGameState::OnStateEnter( const Util::String& prevState )
 {
 	GameStateHandler::OnStateEnter(prevState);	
-
+	this->focusset = false;
 	//const Ptr<UI::UiLayout>& layout = UI::UiFeatureUnit::Instance()->GetLayout("main_menu");
 	//Ptr<UI::UiElement> element = layout->GetElement("updatetext");
 	//return element->GetText();
