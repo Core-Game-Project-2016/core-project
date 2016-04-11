@@ -41,9 +41,10 @@ CoreGameState::OnStateEnter( const Util::String& prevState )
 {
 	GameStateHandler::OnStateEnter(prevState);	
 	this->focusset = false;
-	//const Ptr<UI::UiLayout>& layout = UI::UiFeatureUnit::Instance()->GetLayout("main_menu");
-	//Ptr<UI::UiElement> element = layout->GetElement("updatetext");
-	//return element->GetText();
+	const Ptr<UI::UiLayout>& layout = UI::UiFeatureUnit::Instance()->GetLayout("lobby");
+
+	if (layout->IsShown())
+		layout->Hide();
 }
 
 //------------------------------------------------------------------------------
@@ -104,15 +105,13 @@ CoreGameState::HandleInput()
 	{
 		this->player = FactoryManager::Instance()->CreateEntityByTemplate("Player", "dummychar");
 		EntityManager::Instance()->AttachEntity(this->player);
-		FocusManager::Instance()->SetCameraFocusEntity(this->player, false);
-		FocusManager::Instance()->SetInputFocusEntity(this->player, false);
+		FocusManager::Instance()->SetFocusEntity(this->player, false);
 	}
 	if(kbd->KeyPressed(Input::Key::J))
 	{
 		if (player != NULL)
 		{
-			FocusManager::Instance()->SetCameraFocusEntity(this->player, false);
-			FocusManager::Instance()->SetInputFocusEntity(this->player, false);
+			FocusManager::Instance()->SetFocusEntity(this->player, false);
 		}
 	}
 
