@@ -66,7 +66,8 @@ CoreGameState::OnFrame()
 	{
 		this->HandleInput();
 	}
-		
+	FocusManager::Instance()->SetCameraFocusEntity(this->player, false);
+	FocusManager::Instance()->SetInputFocusEntity(this->player, false);
 	return GameStateHandler::OnFrame();
 }
 
@@ -87,6 +88,8 @@ CoreGameState::OnLoadAfter()
 {
 	this->player = FactoryManager::Instance()->CreateEntityByTemplate("Player", "dummychar");
 	EntityManager::Instance()->AttachEntity(this->player);
+	FocusManager::Instance()->SetCameraFocusEntity(this->player, false);
+	FocusManager::Instance()->SetInputFocusEntity(this->player, false);
 }
 
 //------------------------------------------------------------------------------
