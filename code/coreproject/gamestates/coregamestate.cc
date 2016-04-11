@@ -20,7 +20,7 @@ using namespace Math;
 //------------------------------------------------------------------------------
 /**
 */
-CoreGameState::CoreGameState()
+CoreGameState::CoreGameState() : focusset(false)
 {
 	// empty
 }
@@ -66,10 +66,14 @@ CoreGameState::OnFrame()
 	{
 		this->HandleInput();
 	}
-	if (player)
+	if (player != NULL)
 	{
-		FocusManager::Instance()->SetCameraFocusEntity(this->player, false);
-		FocusManager::Instance()->SetInputFocusEntity(this->player, false);
+		if (!this->focusset)
+		{
+			FocusManager::Instance()->SetCameraFocusEntity(this->player, false);
+			FocusManager::Instance()->SetInputFocusEntity(this->player, false);
+			this->focusset = true;
+		}
 	}
 	return GameStateHandler::OnFrame();
 }

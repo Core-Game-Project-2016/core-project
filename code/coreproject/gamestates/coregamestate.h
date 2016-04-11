@@ -41,6 +41,7 @@ public:
 
 private:
 	Ptr<Game::Entity> player;
+	bool focusset;
 	
 }; 
 } // namespace Tools
