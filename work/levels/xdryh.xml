@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Level>
+    <NebulaLevel Version="2" name="xdryh" id="xdryh">
+        <Layers>
+            <Layer name="Default" autoload="true" visible="true" locked="false" />
+        </Layers>
+        <Entities>
+            <Object category="Player">
+                <Attributes>
+                    <_ID>xdryh|object|Player|dummychar_0</_ID>
+                    <Id>dummychar</Id>
+                    <_Level>xdryh</_Level>
+                    <_Layers>Default</_Layers>
+                    <Guid>415b065a-7d5e-4193-9eba-d0cb9debee6c</Guid>
+                    <ParentGuid>00000000-0000-0000-0000-000000000000</ParentGuid>
+                    <Transform>1.000000, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 4.226497, 4.958519, 4.226497, 1.000000</Transform>
+                    <AirVelocityGain>0.050000</AirVelocityGain>
+                    <AngularSmoothing>true</AngularSmoothing>
+                    <AnimEvents>false</AnimEvents>
+                    <AnimSet>dummychar</AnimSet>
+                    <BackAnim>runBackward</BackAnim>
+                    <CameraAngularVelocity>1.000000</CameraAngularVelocity>
+                    <CameraDistance>5.000000</CameraDistance>
+                    <CameraFocus>true</CameraFocus>
+                    <CameraFov>90.000000</CameraFov>
+                    <CameraHighStop>45.000000</CameraHighStop>
+                    <CameraJoint>Head_End</CameraJoint>
+                    <CameraMaxDistance>125.000000</CameraMaxDistance>
+                    <CameraMinDistance>1.000000</CameraMinDistance>
+                    <CameraRelativeMove>true</CameraRelativeMove>
+                    <CameraSensitivity>3.000000</CameraSensitivity>
+                    <CameraTrackPosition>true</CameraTrackPosition>
+                    <CapsuleHeight>2.000000</CapsuleHeight>
+                    <CapsuleHover>0.000000</CapsuleHover>
+                    <CapsuleRadius>0.500000</CapsuleRadius>
+                    <CastShadows>true</CastShadows>
+                    <CharacterSet>dummychar</CharacterSet>
+                    <CharacterShape>capsule</CharacterShape>
+                    <CharacterSkin></CharacterSkin>
+                    <CollisionDepthThreshold>0.001000</CollisionDepthThreshold>
+                    <CollisionFeedback>false</CollisionFeedback>
+                    <CrouchingCapsuleHeight>1.500000</CrouchingCapsuleHeight>
+                    <DeathAnim>death</DeathAnim>
+                    <EntityScript></EntityScript>
+                    <Following>false</Following>
+                    <Graphics>placeholder/dummyCharacter</Graphics>
+                    <IdleAnim>standing</IdleAnim>
+                    <InputFocus>true</InputFocus>
+                    <InputMouseGrab>false</InputMouseGrab>
+                    <Instanced>false</Instanced>
+                    <JumpAnim>jump</JumpAnim>
+                    <JumpHeight>20.000000</JumpHeight>
+                    <JumpSpeed>10.000000</JumpSpeed>
+                    <LoadSynced>false</LoadSynced>
+                    <LoopStartAnimation>true</LoopStartAnimation>
+                    <Mass>1.000000</Mass>
+                    <MaxVelocity>0.700000</MaxVelocity>
+                    <Moving>false</Moving>
+                    <Name>Dummy Character</Name>
+                    <PhysicMaterial>InvalidMaterial</PhysicMaterial>
+                    <Physics></Physics>
+                    <Placeholder>placeholder/box</Placeholder>
+                    <RelVelocity>0.200000</RelVelocity>
+                    <StartAnimation>standing</StartAnimation>
+                    <Static>false</Static>
+                    <StrafeLeftAnim>strafeLeft</StrafeLeftAnim>
+                    <StrafeRightAnim>strafeRight</StrafeRightAnim>
+                    <TargetEntityId>0</TargetEntityId>
+                    <UseAnim>use</UseAnim>
+                    <UseFallbackAnim>false</UseFallbackAnim>
+                    <UseReversedAnim>false</UseReversedAnim>
+                    <UseStrafeAnim>true</UseStrafeAnim>
+                    <VelocityGain>0.950000</VelocityGain>
+                    <VelocityVector>0.000000,0.000000,0.000000,0.000000</VelocityVector>
+                    <WalkAnim>runForward</WalkAnim>
+                </Attributes>
+            </Object>
+            <Object category="_Environment">
+                <Attributes>
+                    <_ID>xdryh|environment|dummyground_0</_ID>
+                    <Id>dummyground</Id>
+                    <_Level>xdryh</_Level>
+                    <_Layers>Default</_Layers>
+                    <Guid>b612789d-45e4-482c-9cd3-e67332a63af0</Guid>
+                    <ParentGuid>00000000-0000-0000-0000-000000000000</ParentGuid>
+                    <Transform>1.000000, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 4.226497, 4.226500, 4.226497, 1.000000</Transform>
+                    <CastShadows>true</CastShadows>
+                    <PhysicMaterial>EmptyWood</PhysicMaterial>
+                    <Graphics>examples/dummyground</Graphics>
+                    <StartAnimation></StartAnimation>
+                    <LoadSynced>false</LoadSynced>
+                    <CollisionEnabled>true</CollisionEnabled>
+                    <DynamicObject>false</DynamicObject>
+                    <VelocityVector>0.000000,0.000000,0.000000,0.000000</VelocityVector>
+                    <Instanced>false</Instanced>
+                </Attributes>
+            </Object>
+        </Entities>
+        <Global WorldCenter="4.226498,3.109850,4.226498,1.000000" WorldExtents="52.360531,7.219701,52.519909,0.000000" PostEffectPreset="Default" GlobalLightTransform="1.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.707107, -0.707107, 0.000000, 0.000000, 0.707107, 0.707107, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000" _Layers="Default" />
+    </NebulaLevel>
+</Level>
