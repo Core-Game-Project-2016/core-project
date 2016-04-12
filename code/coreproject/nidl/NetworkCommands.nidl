@@ -63,6 +63,28 @@
 			]]>
 		  </Code>
 		</Command>
+    
+  		<Command name="getserverlist" fourcc="GELi" desc="Get all found servers">
+		  <Code>
+			<![CDATA[
+      
+        const Ptr<Attr::AttributeTable>& servers = MultiplayerFeature::NetworkGame::Instance()->GetMasterList();
+        
+        int rows = servers->GetNumRows();
+	      if (rows != NULL)
+	      {
+            for (int i = 0; i < rows; i++) 
+            { 
+                Util::String gameId = servers->GetString(Attr::GameID, i);
+                const char* charId = gameId.AsCharPtr();
+                n_printf(charId);
+            }
+	        
+	      }
+        
+			]]>
+		  </Code>
+		</Command>
 		
 	</Library>
 </Nebula3>

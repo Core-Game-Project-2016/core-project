@@ -7,7 +7,7 @@
 		<ul class="button_list">
 			<li class="button" onclick="scr.CreateLobby()">Host Game</li>
 			<li class="button" onclick="scr.SwitchLayout('direct_connect')">Direct Connect</li>
-			<li class="button" onclick="scr.SwitchLayout('serverlist')">Server Browser</li>
+			<li class="button" onclick="scr.FindGames()">Server Browser</li>
 			<li class="button" onclick="scr.SwitchLayout('options')">Options</li>
 			<li class="button" onclick="scr.SwitchLayout('about')">About</li>
 			<li class="button" onclick="scr.exit()">Exit</li>

@@ -44,6 +44,17 @@ function JoinLobby(ip, enter)
 	end;
 end;
 
+function GetServerList()
+	getserverlist();
+end;
+
+function FindGames()
+
+	refreshserverlist();
+	SwitchLayout('serverlist')
+
+end;
+
 function StartGame()
 	startgame();
 end;
