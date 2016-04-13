@@ -15,6 +15,8 @@ function SwitchLayout(layout)
 end;
 
 function Back()
+	cancellobby();
+	cancelroom();
 	temp = currentLayout;
 	currentLayout = previousLayout;
 	previousLayout = currentLayout;
@@ -57,4 +59,10 @@ end;
 
 function StartGame()
 	startgame();
+end;
+
+function CancelRoom()
+	cancellobby();
+	cancelroom();
+	exit() 
 end;
