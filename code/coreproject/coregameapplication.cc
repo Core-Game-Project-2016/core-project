@@ -97,6 +97,7 @@ CoreProjectApplication::SetupGameFeatures()
 {
 	GameApplication::SetupGameFeatures();
 
+
 	// create and attach default graphic features
 	this->graphicsFeature = GraphicsFeature::GraphicsFeatureUnit::Create();
 	this->graphicsFeature->SetCmdLineArgs(this->GetCmdLineArgs());
@@ -128,9 +129,10 @@ CoreProjectApplication::SetupGameFeatures()
 
 	// setup multiplayerfeature
 	this->multiplayerFeature = MultiplayerFeature::MultiplayerFeatureUnit::Create();
+	this->networkGame = CoreG::CoreNetworkGame::Create();
 
-	this->networkGame = MultiplayerFeature::NetworkGame::Create();
-	this->networkGame->SetGameID(App::Application::Instance()->GetAppID());
+/*	this->networkGame = MultiplayerFeature::NetworkGame::Create();*/
+/*	this->networkGame->SetGameID(App::Application::Instance()->GetAppID());*/
 	this->player = MultiplayerFeature::NetworkPlayer::Create();
 	this->multiplayerFeature->SetPlayer(this->player);
 	// must come before basegamefeature!

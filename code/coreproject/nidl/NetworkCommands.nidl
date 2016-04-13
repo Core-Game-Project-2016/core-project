@@ -8,6 +8,7 @@
 		<Dependency header="multiplayer/networkserver.h"/>
 		<Dependency header="basegamefeature/statehandlers/gamestatehandler.h"/>
 		<Dependency header="coreproject/coregameapplication.h"/>
+    <Dependency header="coreproject/corenetworkgame.h"/>
 		<Dependency header="ui/uilayout.h"/>
 		<Dependency header="ui/uifeatureunit.h"/>
 		
@@ -67,27 +68,39 @@
   		<Command name="getserverlist" fourcc="GELi" desc="Get all found servers">
 		  <Code>
 			<![CDATA[
-      
-        const Ptr<Attr::AttributeTable>& servers = MultiplayerFeature::NetworkGame::Instance()->GetMasterList();
-        if(servers != NULL)
-        {
-            int rows = servers->GetNumRows();
-	          if (rows != NULL)
-	          {
-                for (int i = 0; i < rows; i++) 
-                { 
-                    Util::String gameId = servers->GetString(Attr::GameID, i);
-                    const char* charId = gameId.AsCharPtr();
-                    n_printf(charId);
-                }
-	        
-	          }
-        }
+           //MultiplayerFeature::NetworkGame::Instance()->UpdateRoomList();
+           MultiplayerFeature::NetworkGame::Instance()->GetMasterList();
+           //MultiplayerFeature::Instance()->OnReceiverMasterList();
+//         const Ptr<Attr::AttributeTable>& servers = MultiplayerFeature::NetworkGame::Instance()->GetMasterList();
+//         if(servers != NULL)
+//         {
+//             int rows = servers->GetNumRows();
+// 	          if (rows != NULL)
+// 	          {
+//                 for (int i = 0; i < rows; i++) 
+//                 { 
+//                     Util::String gameId = servers->GetString(Attr::GameID, i) + "\n";
+//                     const char* charId = gameId.AsCharPtr();
+//                     n_printf(charId);
+//                 }
+// 	        
+// 	          }
+//         }
+
         
         
 			]]>
 		  </Code>
 		</Command>
+    <Command name="connectserver" fourcc="cnsr" desc="connect to server">
+      <InArg name="value" type="int"/>
+      <Code>
+        <![CDATA[
+          //MultiplayerFeature::MultiplayerFeatureUnit::Instance()->GetPlayer().cast<NotA::NotANetworkPlayer>()->SetId(1);
+          CoreG::CoreNetworkGame::Instance()->JoinServerEntry(value);
+        ]]>
+      </Code>
+    </Command>
 		
 	</Library>
 </Nebula3>

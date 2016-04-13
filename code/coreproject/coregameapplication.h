@@ -40,7 +40,7 @@ private:
 	void SetupGameFeatures() override;
 	/// cleanup game features
 	void CleanupGameFeatures() override;
-
+	void OnReceiverMasterList();
 	Ptr<UI::UiFeatureUnit> uiFeature;
 	Ptr<UI::UiLayout> mainLayout;
 	Ptr<PhysicsFeature::PhysicsFeatureUnit> physicsFeature;
