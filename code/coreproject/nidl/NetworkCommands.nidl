@@ -68,36 +68,22 @@
   		<Command name="getserverlist" fourcc="GELi" desc="Get all found servers">
 		  <Code>
 			<![CDATA[
-           //MultiplayerFeature::NetworkGame::Instance()->UpdateRoomList();
-           MultiplayerFeature::NetworkGame::Instance()->GetMasterList();
-           //MultiplayerFeature::Instance()->OnReceiverMasterList();
-//         const Ptr<Attr::AttributeTable>& servers = MultiplayerFeature::NetworkGame::Instance()->GetMasterList();
-//         if(servers != NULL)
-//         {
-//             int rows = servers->GetNumRows();
-// 	          if (rows != NULL)
-// 	          {
-//                 for (int i = 0; i < rows; i++) 
-//                 { 
-//                     Util::String gameId = servers->GetString(Attr::GameID, i) + "\n";
-//                     const char* charId = gameId.AsCharPtr();
-//                     n_printf(charId);
-//                 }
-// 	        
-// 	          }
-//         }
-
-        
-        
-			]]>
+        MultiplayerFeature::NetworkGame::Instance()->UpdateRoomList();
+     	]]>
 		  </Code>
 		</Command>
     <Command name="connectserver" fourcc="cnsr" desc="connect to server">
       <InArg name="value" type="int"/>
       <Code>
         <![CDATA[
-          //MultiplayerFeature::MultiplayerFeatureUnit::Instance()->GetPlayer().cast<NotA::NotANetworkPlayer>()->SetId(1);
           CoreG::CoreNetworkGame::Instance()->JoinServerEntry(value);
+        ]]>
+      </Code>
+    </Command>
+    <Command name="cancelroom" fourcc="cacr" desc="cancels a session">
+      <Code>
+        <![CDATA[
+          CoreG::CoreNetworkGame::Instance()->CancelSession();
         ]]>
       </Code>
     </Command>
