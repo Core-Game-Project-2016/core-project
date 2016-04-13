@@ -27,6 +27,32 @@
                     <Instanced>false</Instanced>
                 </Attributes>
             </Object>
+            <Object category="Ball">
+                <Attributes>
+                    <_ID>demo_full|object|Ball|_0</_ID>
+                    <Id></Id>
+                    <_Level>demo_full</_Level>
+                    <_Layers>Default</_Layers>
+                    <Guid>ebf393e5-5791-4845-84e3-6d4b35a78a02</Guid>
+                    <ParentGuid>00000000-0000-0000-0000-000000000000</ParentGuid>
+                    <Transform>0.200000, 0.000000, 0.000000, 0.000000, 0.000000, 0.200000, 0.000000, 0.000000, 0.000000, 0.000000, 0.200000, 0.000000, 0.000000, 0.000000, -12.775078, 1.000000</Transform>
+                    <AnimEvents>false</AnimEvents>
+                    <CastShadows>true</CastShadows>
+                    <CollisionDepthThreshold>0.001000</CollisionDepthThreshold>
+                    <CollisionFeedback>false</CollisionFeedback>
+                    <Graphics>level/Artefact</Graphics>
+                    <Instanced>false</Instanced>
+                    <LoadSynced>false</LoadSynced>
+                    <Mass>0.080000</Mass>
+                    <Name></Name>
+                    <PhysicMaterial>ballMaterial</PhysicMaterial>
+                    <Physics></Physics>
+                    <Placeholder></Placeholder>
+                    <StartAnimation></StartAnimation>
+                    <Static>false</Static>
+                    <VelocityVector>0.000000,0.000000,0.000000,0.000000</VelocityVector>
+                </Attributes>
+            </Object>
         </Entities>
         <Global WorldCenter="-5.342445,13.168569,-189.188492,1.000000" WorldExtents="169.724655,48.385185,449.718597,0.000000" PostEffectPreset="Default" GlobalLightTransform="-0.270318, -0.644360, 0.715351, 0.000000, 0.875152, -0.474150, -0.096391, 0.000000, 0.401295, 0.599985, 0.692085, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000" _Layers="Default;New layer;Trees" />
     </NebulaLevel>

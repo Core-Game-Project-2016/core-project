@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Ball>
+    <Item Name="" Id="Bollen" Placeholder="" Graphics="level/Artefact" StartAnimation="" Instanced="false" Static="false" AnimEvents="false" CastShadows="true" LoadSynced="false" PhysicMaterial="ballMaterial" CollisionDepthThreshold="0.001000" Mass="0.080000" Physics="" VelocityVector="0.000000,0.000000,0.000000,0.000000" CollisionFeedback="false" />
+</Ball>

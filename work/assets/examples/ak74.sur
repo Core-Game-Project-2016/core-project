@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <NebulaT>
-    <Surface template="Static">
+    <Surface template="Vertex colored">
         <Param name="AlbedoMap" value="tex:examples/rifle_material" />
         <Param name="SpecularMap" value="tex:system/specmap" />
         <Param name="NormalMap" value="tex:system/nobump" />
@@ -9,5 +9,20 @@
         <Param name="MatAlbedoIntensity" value="1.000000,1.000000,1.000000,1.000000" />
         <Param name="MatSpecularIntensity" value="0.000000,0.000000,0.000000,0.000000" />
         <Param name="MatRoughnessIntensity" value="0.000000" />
+        <Param name="WaveMap" value="tex:system/nobump" />
+        <Param name="HeightMap" value="tex:system/white" />
+        <Param name="FogBrightColor" value="0.600000,0.600000,0.700000,0.000000" />
+        <Param name="WaterColor" value="0.000000,0.100000,0.150000,1.000000" />
+        <Param name="WaterSpecular" value="1.000000,1.000000,1.000000,1.000000" />
+        <Param name="WaterScatterColor" value="0.300000,0.700000,0.600000,0.000000" />
+        <Param name="FogDarkColor" value="0.600000,0.600000,0.700000,0.000000" />
+        <Param name="WaterColorIntensity" value="0.100000,0.200000" />
+        <Param name="TileSize" value="1.000000,1.000000" />
+        <Param name="WaveScale" value="1.000000,1.000000" />
+        <Param name="WaveMicroScale" value="225.000000,225.000000" />
+        <Param name="DynamicTessellationFactor" value="1.000000" />
+        <Param name="WaveSpeed" value="0.000000" />
+        <Param name="FogDensity" value="0.001430" />
+        <Param name="WaveHeight" value="1.000000" />
     </Surface>
 </NebulaT>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PhysicsMaterials IsVirtualCategory="true">
+    <Item Id="ballMaterial" Friction="1.000000" Restitution="1.000000" CollisionEvents="" />
+</PhysicsMaterials>

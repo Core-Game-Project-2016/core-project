@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Nebula3 version="1">
-    <Options exportFlags="4" exportMode="1" scale="3.000000" />
+    <Options exportFlags="4" exportMode="0" scale="3.000000" />
     <States>
         <ModelNode name="Artefact_ch/Artefact_graphics" material="Skinned">
             <Textures>
@@ -14,7 +14,7 @@
                 <Texture name="NormalMap" value="tex:system/nobump" />
             </Textures>
         </ModelNode>
-        <ModelNode name="root/Artefact_graphics" material="Static">
+        <ModelNode name="root/Artefact_graphics" material="sur:examples/ak74">
             <Textures>
                 <Texture name="DiffuseMap" value="tex:system/white" />
                 <Texture name="NormalMap" value="tex:system/nobump" />

@@ -7,6 +7,8 @@
 #include "graphicsfeatureunit.h"
 #include "input/keyboard.h"
 #include "coreproject/coregameapplication.h"
+#include "input/mouse.h"
+#include "physicsfeature/physicsprotocol.h"
 
 namespace Tools
 {
@@ -100,6 +102,25 @@ void
 CoreGameState::HandleInput()
 {
 	const Ptr<Input::Keyboard>& kbd = Input::InputServer::Instance()->GetDefaultKeyboard();
+	const Ptr<Input::Mouse>& mouse = Input::InputServer::Instance()->GetDefaultMouse();
+	
+	if (mouse->ButtonUp(Input::MouseButton::LeftButton))
+	{
+		Math::matrix44 m;
+		Math::float4 v(0, 1, 0, 1);
+		Ptr<Game::Entity> boll = FactoryManager::Instance()->CreateEntityByTemplate("Ball", "Bollen", true);
+		m = this->player->GetMatrix44(Attr::Transform);
+		boll->SetMatrix44(Attr::Transform, m);
+		Ptr<PhysicsFeature::ApplyImpulseAtPos> msg = PhysicsFeature::ApplyImpulseAtPos::Create();
+		
+		EntityManager::Instance()->AttachEntity(boll);
+		msg->SetImpulse(v);
+		msg->SetMultiplyByMass(true);
+		msg->SetPosition(Math::vector::zerovector());
+
+		__SendSync(boll, msg);
+
+	}
 	
 	if (kbd->KeyDown(Input::Key::H))
 	{

@@ -146,8 +146,9 @@ CoreProjectApplication::SetupGameFeatures()
 	this->gameServer->AttachGameFeature(this->uiFeature.cast<Game::FeatureUnit>());
 	this->gameServer->AttachGameFeature(this->postEffectFeature.cast<Game::FeatureUnit>());
 
+	//this->multiplayerFeature->Setup(MultiplayerFeature::MultiplayerFeatureUnit::LAN);
 	this->multiplayerFeature->Setup(MultiplayerFeature::MultiplayerFeatureUnit::LAN);
-
+	
 	Commands::ScriptingCommands::Register();
 	Commands::NetworkCommands::Register();
 	Commands::PhysicsProtocol::Register();

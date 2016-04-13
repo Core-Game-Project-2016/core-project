@@ -5,6 +5,10 @@
         <Property type="PhysicsFeature::AnimatedPhysicsProperty" />
         <Property type="ScriptingFeature::ScriptingProperty" />
     </Entity>
+    <Entity cppclass="Entity" type="Ball">
+        <Property type="GraphicsFeature::GraphicsProperty" />
+        <Property type="PhysicsFeature::PhysicsProperty" />
+    </Entity>
     <Entity cppclass="Entity" type="Camera" desc="a camera entity with like maya input">
         <Property type="GraphicsFeature::MayaCameraProperty" />
         <Property type="GraphicsFeature::InputProperty" masterOnly="true" />
