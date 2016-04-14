@@ -55,7 +55,7 @@
         <Property type="ScriptingFeature::ScriptingProperty" />
         <Property type="PhysicsFeature::InteractProperty" />
         <Property type="PhysicsFeature::CharacterPhysicsProperty" />
-        <Property type="GraphicsFeature::FpsCameraProperty" />
+        <Property type="GraphicsFeature::FpsCameraProperty" masterOnly="true"/>
     </Entity>
     <Entity cppclass="Entity" type="PostEffectBubble" desc="a bubble of post effects">
         <Property type="BaseGameFeature::TransformableProperty" />

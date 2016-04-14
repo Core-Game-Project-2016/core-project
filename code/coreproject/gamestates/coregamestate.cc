@@ -9,6 +9,8 @@
 #include "coreproject/coregameapplication.h"
 #include "input/mouse.h"
 #include "physicsfeature/physicsprotocol.h"
+#include "graphics/graphicsserver.h"
+#include "basegamefeature/basegameprotocol.h"
 
 namespace Tools
 {
@@ -104,20 +106,27 @@ CoreGameState::HandleInput()
 	const Ptr<Input::Keyboard>& kbd = Input::InputServer::Instance()->GetDefaultKeyboard();
 	const Ptr<Input::Mouse>& mouse = Input::InputServer::Instance()->GetDefaultMouse();
 	
-	if (mouse->ButtonUp(Input::MouseButton::LeftButton))
+	if (mouse->ButtonUp(Input::MouseButton::LeftButton) && this->player.isvalid())
 	{
-		Math::matrix44 m;
+		Math::matrix44 m, t, vT;
+		t = this->player->GetMatrix44(Attr::Transform);
 		Math::float4 v(0, 1, 0, 1);
-		Ptr<Game::Entity> boll = FactoryManager::Instance()->CreateEntityByTemplate("Ball", "Bollen", true);
-		m = this->player->GetMatrix44(Attr::Transform);
-		boll->SetMatrix44(Attr::Transform, m);
+		
+		Ptr<Game::Entity> boll = FactoryManager::Instance()->CreateEntityByTemplate("Ball", "Bollen2", true);
+
+		vT = Graphics::GraphicsServer::Instance()->GetCurrentView()->GetCameraEntity()->GetViewTransform();
+		vT = matrix44::transpose(vT);
+		v = vT.getrow2() * -1;
 		Ptr<PhysicsFeature::ApplyImpulseAtPos> msg = PhysicsFeature::ApplyImpulseAtPos::Create();
+		Ptr<BaseGameFeature::SetTransform> tMsg = BaseGameFeature::SetTransform::Create();
+		tMsg->SetMatrix(t);
+		
+		msg->SetImpulse(v * 2);
+		msg->SetMultiplyByMass(true);
+		msg->SetPosition(m.get_position());
 		
 		EntityManager::Instance()->AttachEntity(boll);
-		msg->SetImpulse(v);
-		msg->SetMultiplyByMass(true);
-		msg->SetPosition(Math::vector::zerovector());
-
+		__SendSync(boll, tMsg);
 		__SendSync(boll, msg);
 
 	}

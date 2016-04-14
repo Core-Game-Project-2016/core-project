@@ -29,13 +29,13 @@
             </Object>
             <Object category="Ball">
                 <Attributes>
-                    <_ID>demo_full|object|Ball|_0</_ID>
-                    <Id></Id>
+                    <_ID>demo_full|object|Ball|Bollen_0</_ID>
+                    <Id>Bollen</Id>
                     <_Level>demo_full</_Level>
                     <_Layers>Default</_Layers>
-                    <Guid>ebf393e5-5791-4845-84e3-6d4b35a78a02</Guid>
+                    <Guid>0573f2c0-3222-4214-9a9f-ca940af9d5a4</Guid>
                     <ParentGuid>00000000-0000-0000-0000-000000000000</ParentGuid>
-                    <Transform>0.200000, 0.000000, 0.000000, 0.000000, 0.000000, 0.200000, 0.000000, 0.000000, 0.000000, 0.000000, 0.200000, 0.000000, 0.000000, 0.000000, -12.775078, 1.000000</Transform>
+                    <Transform>0.100000, 0.000000, 0.000000, 0.000000, 0.000000, 0.100000, 0.000000, 0.000000, 0.000000, 0.000000, 0.100000, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000</Transform>
                     <AnimEvents>false</AnimEvents>
                     <CastShadows>true</CastShadows>
                     <CollisionDepthThreshold>0.001000</CollisionDepthThreshold>
