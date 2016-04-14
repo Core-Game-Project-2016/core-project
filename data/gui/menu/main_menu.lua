@@ -17,16 +17,13 @@ end;
 function Back()
 	cancellobby();
 	cancelroom();
-	temp = currentLayout;
-	currentLayout = previousLayout;
-	previousLayout = currentLayout;
-	
-	if previousLayout ~= nil then
-		hidelayout(previousLayout);
-	end;
-	
-	showlayout(currentLayout);
-end;
+	if previousLayout then
+		hidelayout(currentLayout)		
+		showlayout(previousLayout)
+		currentLayout = previousLayout		
+		previousLayout = nil
+	end
+end
 
 function CreateLobby()
 	createlobby();
