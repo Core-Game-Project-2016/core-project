@@ -106,22 +106,20 @@ CoreGameState::HandleInput()
 	const Ptr<Input::Keyboard>& kbd = Input::InputServer::Instance()->GetDefaultKeyboard();
 	const Ptr<Input::Mouse>& mouse = Input::InputServer::Instance()->GetDefaultMouse();
 	
-	if (mouse->ButtonUp(Input::MouseButton::LeftButton))
+	if (mouse->ButtonUp(Input::MouseButton::LeftButton) && this->player.isvalid())
 	{
 		Math::matrix44 m, t, vT;
 		t = this->player->GetMatrix44(Attr::Transform);
 		Math::float4 v(0, 1, 0, 1);
 		
 		Ptr<Game::Entity> boll = FactoryManager::Instance()->CreateEntityByTemplate("Ball", "Bollen2", true);
-		
-		m.scale(Math::float4(0.1, 0.1, 0.1, 1));
-		boll->SetMatrix44(Attr::Transform, m);
+
 		vT = Graphics::GraphicsServer::Instance()->GetCurrentView()->GetCameraEntity()->GetViewTransform();
-		v = vT.get_zaxis();
+		vT = matrix44::transpose(vT);
+		v = vT.getrow2() * -1;
 		Ptr<PhysicsFeature::ApplyImpulseAtPos> msg = PhysicsFeature::ApplyImpulseAtPos::Create();
 		Ptr<BaseGameFeature::SetTransform> tMsg = BaseGameFeature::SetTransform::Create();
 		tMsg->SetMatrix(t);
-		
 		
 		msg->SetImpulse(v * 2);
 		msg->SetMultiplyByMass(true);
