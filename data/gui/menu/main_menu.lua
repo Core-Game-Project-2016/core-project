@@ -39,7 +39,8 @@ function JoinLobby(ip, enter)
 	if enter then
 		refreshserverlist();
 		joinlobby(ip);
-		SwitchLayout('lobby');
+		hidelayout(currentlayout)
+		showlayout('gamelobby')	
 	end;
 end;
 
@@ -63,3 +64,7 @@ function CancelRoom()
 	cancelroom();
 	exit() 
 end;
+function joinedsession()	
+	--setelementvisible("gamelobby","startbutton",false)
+	SwitchLayout('gamelobby')
+end

@@ -2,6 +2,7 @@
 <_Ui_Layouts IsVirtualCategory="true">
     <Item Id="gui:menu/about.rml" Name="about" UICursor="false" AutoLoad="true" />
     <Item Id="gui:menu/direct_connect.rml" Name="direct_connect" UICursor="false" AutoLoad="true" />
+    <Item Id="gui:menu/gamelobby.rml" Name="gamelobby" UICursor="false" AutoLoad="true" />
     <Item Id="gui:menu/lobby.rml" Name="lobby" UICursor="false" AutoLoad="true" />
     <Item Id="gui:menu/main_menu.rml" Name="main_menu" UICursor="false" AutoLoad="true" />
     <Item Id="gui:menu/options.rml" Name="options" UICursor="false" AutoLoad="true" />

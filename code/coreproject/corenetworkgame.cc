@@ -46,7 +46,7 @@ CoreNetworkGame::~CoreNetworkGame()
 void
 CoreNetworkGame::OnJoinedRoom()
 {	
-
+	ScriptingFeature::ScriptingFeatureUnit::Instance()->EvalScript("joinedsession()");
 }
 
 //------------------------------------------------------------------------------
@@ -151,7 +151,7 @@ CoreNetworkGame::OnReceiverMasterList()
 				
 		Ptr<UI::UiElement> but = basediv->AddElement("button", "button", dic).cast<UI::UiElement>();
 		int count = servers->GetInt(Attr::CurrentPlayers, i);
-		format.Format("%s - (%d/2)", servers->GetString(Attr::RoomName, i).AsCharPtr(), count);
+		format.Format("%s - (%d/8)", servers->GetString(Attr::RoomName, i).AsCharPtr(), count);
 		but->SetText(format);
 		this->serverButtons.Append(but);
 	}
