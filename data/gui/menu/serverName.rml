@@ -1,0 +1,13 @@
+<template name="serverName" content="content">
+<head>
+	<link type="text/rcss" href="main_menu.rcss"/>
+</head>
+<body class="serverName">
+	
+	<input type="text" onchange="src.ChangeServerName()"/>
+
+	<ul class="button_list">
+		<li class="button" onclick="scr.SwitchLayout('demo')">Back</li>
+	</ul>
+</body>
+</template>

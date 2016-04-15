@@ -4,6 +4,7 @@
 </head>
 <body class="options">
 	<ul class="button_list">
+		<li class="button" onclick="scr.SwitchLayout('serverName')">Change server name</li>
 		<li class="button" onclick="scr.Back()">Back</li>
 	</ul>
 </body>

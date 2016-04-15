@@ -7,5 +7,6 @@
     <Item Id="gui:menu/main_menu.rml" Name="main_menu" UICursor="false" AutoLoad="true" />
     <Item Id="gui:menu/options.rml" Name="options" UICursor="false" AutoLoad="true" />
     <Item Id="gui:menu/serverlist.rml" Name="serverlist" UICursor="false" AutoLoad="true" />
+    <Item Id="gui:menu/serverName.rml" Name="serverName" UICursor="false" AutoLoad="true" />
     <Item Id="gui:demo/cursor.rml" Name="cursor" UICursor="false" AutoLoad="true" />
 </_Ui_Layouts>

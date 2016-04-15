@@ -16,15 +16,28 @@
 		<Command name="createlobby" fourcc="crGa" desc="creates a new game session">
 		  <Code>
 			<![CDATA[
-				MultiplayerFeature::NetworkGame::Instance()->CreateRoom();
+
+				CoreG::CoreNetworkGame::Instance()->CreateRoom();
+        
 			]]>
 		  </Code>
 		</Command>
 
+    <Command name="changeservername" fourcc="CSNa" desc="creates a new game session">
+      <InArg name="name" type="string"/>
+      <Code>
+        <![CDATA[
+        
+        MultiplayerFeature::NetworkGame::Instance()->SetGameName(name);
+        
+			]]>
+      </Code>
+    </Command>
+
     <Command name="cancellobby" fourcc="cLoB" desc="cancellobby">
       <Code>
         <![CDATA[
-				MultiplayerFeature::NetworkGame::Instance()->CancelRoom();
+				CoreG::CoreNetworkGame::Instance()->CancelRoom();
 			]]>
       </Code>
     </Command>

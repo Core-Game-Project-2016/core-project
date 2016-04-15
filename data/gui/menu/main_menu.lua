@@ -68,3 +68,10 @@ function joinedsession()
 	--setelementvisible("gamelobby","startbutton",false)
 	SwitchLayout('gamelobby')
 end
+
+function ChangeServerName(name, enter)
+	if enter then
+		changeservername(name);
+		SwitchLayout('main_menu')
+	end;
+end;
