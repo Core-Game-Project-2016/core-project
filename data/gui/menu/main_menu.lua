@@ -17,6 +17,7 @@ end;
 function Back()
 	cancellobby();
 	cancelroom();
+	clearserverlist();
 	if previousLayout then
 		hidelayout(currentLayout)		
 		showlayout(previousLayout)

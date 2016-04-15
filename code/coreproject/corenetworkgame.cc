@@ -127,6 +127,7 @@ CoreNetworkGame::ClearServerList()
 		this->serverButtons[i] = 0;
 	}
 	this->serverButtons.Clear();
+	
 }
 
 //------------------------------------------------------------------------------

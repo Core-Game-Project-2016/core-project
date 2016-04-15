@@ -81,6 +81,7 @@
   		<Command name="getserverlist" fourcc="GELi" desc="Get all found servers">
 		  <Code>
 			<![CDATA[
+        CoreG::CoreNetworkGame::Instance()->ClearServerList();
         MultiplayerFeature::NetworkGame::Instance()->UpdateRoomList();
      	]]>
 		  </Code>
@@ -100,6 +101,14 @@
         ]]>
       </Code>
     </Command>
+    <Command name="clearserverlist" fourcc="CSLi" desc="cancels a session">
+      <Code>
+        <![CDATA[
+          CoreG::CoreNetworkGame::Instance()->ClearServerList();
+        ]]>
+      </Code>
+    </Command>
+    
 		
 	</Library>
 </Nebula3>

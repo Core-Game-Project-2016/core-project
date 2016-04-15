@@ -80,15 +80,19 @@ public:
 	///
 	void SetWinner(int team);
 
+	///
+	void ClearServerList();
+	Util::Array<Ptr<UI::UiElement>> serverButtons;
+
 protected:
 	///
 	void OnAllReady(bool dummy);
 
 
+
+
 private:
-	///
-	void ClearServerList();
-	Util::Array<Ptr<UI::UiElement>> serverButtons;
+
 
 };
 
