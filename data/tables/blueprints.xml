@@ -49,7 +49,7 @@
         <Property type="GraphicsFeature::LightProbeProperty" />
     </Entity>
     <Entity cppclass="Entity" type="Player">
-        <Property type="GraphicsFeature::InputProperty" />
+        <Property type="GraphicsFeature::InputProperty" masterOnly="true" />
         <Property type="GraphicsFeature::ActorGraphicsProperty" />
         <Property type="GraphicsFeature::AnimationControlProperty" />
         <Property type="ScriptingFeature::ScriptingProperty" />
