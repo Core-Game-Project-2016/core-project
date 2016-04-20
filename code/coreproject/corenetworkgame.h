@@ -32,6 +32,8 @@ public:
 	~CoreNetworkGame();
 
 
+	bool CanJoinInGame() override;
+
 	/// receives the master servers room list
 	virtual void OnReceiverMasterList();
 	/// called when successfully joined a room

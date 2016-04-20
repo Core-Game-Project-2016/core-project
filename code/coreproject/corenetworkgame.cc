@@ -41,7 +41,12 @@ CoreNetworkGame::~CoreNetworkGame()
 	__DestructInterfaceSingleton;
 }
 
-//------------------------------------------------------------------------------
+bool CoreNetworkGame::CanJoinInGame()
+{
+	return false;
+}
+
+	//------------------------------------------------------------------------------
 /**
 */
 void
