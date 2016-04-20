@@ -45,10 +45,14 @@ CoreGameState::OnStateEnter( const Util::String& prevState )
 {
 	GameStateHandler::OnStateEnter(prevState);	
 	this->focusset = false;
-	const Ptr<UI::UiLayout>& layout = UI::UiFeatureUnit::Instance()->GetLayout("lobby");
+	const Ptr<UI::UiLayout>& lobby = UI::UiFeatureUnit::Instance()->GetLayout("lobby");
+	const Ptr<UI::UiLayout>& gamelobby = UI::UiFeatureUnit::Instance()->GetLayout("gamelobby");
 
-	if (layout->IsShown())
-		layout->Hide();
+	if (lobby->IsShown())
+		lobby->Hide();
+
+	if (gamelobby->IsShown())
+		gamelobby->Hide();
 }
 
 //------------------------------------------------------------------------------
